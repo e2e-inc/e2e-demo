@@ -1,36 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TesterPay (Next.js)
 
-## Getting Started
-
-First, run the development server:
+A Next.js 16 rebuild of the TesterPay demo (`~/testerarmy/demos/apps/finance`), a Venmo-style
+payments app used as a QA target.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev   # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How it works
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **No network backend.** The original Hono + SQLite backend runs in the browser
+  (`lib/backend`). Data is stored per visitor in IndexedDB (`demo-finance`), with Web Locks
+  keeping tabs in sync. It needs HTTPS or localhost.
+- `lib/api.ts` calls the local backend at `https://demo.local`. No request ever leaves the page.
+- The session token lives in `localStorage` (`testerpay.session-token`). Route access by session
+  status is enforced client-side in `components/app-shell.tsx`, which mirrors Expo's
+  `Stack.Protected` groups.
+- UI, copy, `data-testid`s, query params, validation and known quirks match the original 1:1.
+  The desktop sidebar layout switches on at a width of 960px or more.
+- "Reset demo" in Settings restores the seed data.
