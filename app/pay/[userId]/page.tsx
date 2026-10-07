@@ -160,6 +160,7 @@ export default function Amount() {
               {person.displayName}
             </p>
             <p className={styles.confirmBody}>
+              {emoji ? `${emoji} ` : ''}
               {note ? `“${note}”  ·  ` : ''}
               {PRIVACY.find((option) => option.value === privacy)?.label}
               {confirming === 'pay'
@@ -251,6 +252,7 @@ export default function Amount() {
               type="button"
               key={item}
               aria-label={`Emoji ${item}`}
+              aria-pressed={emoji === item}
               onClick={() =>
                 setEmoji((current) => (current === item ? null : item))
               }
