@@ -2,12 +2,12 @@ import { test } from '@e2e-dev/web';
 import { expect } from 'e2e';
 
 test.describe('wallet', { session: 'member', tags: ['wallet'] }, () => {
-  test('transfers part of the balance to a linked bank', async ({ app, agent, screen, web }) => {
+  test('transfers part of the balance to a linked bank', async ({ app, agent, screen, browser }) => {
     await app.open('/profile');
     await agent.act('open Banks and cards and link a {institution} bank account with account number {accountNumber}', {
       params: { institution: 'Summit Federal', accountNumber: '9876543210' },
     });
-    await expect(web).toHaveURL('/wallet/funding-sources');
+    await expect(browser).toHaveURL('/wallet/funding-sources');
     await expect(screen.getByTestId('funding-row-3210')).toContainText('Summit Federal');
 
     await app.open('/');

@@ -1,25 +1,25 @@
 import { test } from '@e2e-dev/web';
 import { credentials, expect } from 'e2e';
 
-test('signs out and signs back in', { session: 'member', tags: ['smoke', 'auth'] }, async ({ app, agent, screen, web }) => {
+test('signs out and signs back in', { session: 'member', tags: ['smoke', 'auth'] }, async ({ app, agent, screen, browser }) => {
   const member = credentials.user('member');
   await app.open('/profile');
   await agent.act('sign out of the account');
-  await expect(web).toHaveURL('/welcome');
+  await expect(browser).toHaveURL('/welcome');
 
   await agent.act('sign in with the given account credentials', {
     params: { username: member.username, password: member.password },
   });
-  await expect(web).toHaveURL('/');
+  await expect(browser).toHaveURL('/');
   await expect(screen.getByTestId('balance-amount')).toHaveText('$10.00');
 });
 
-test('links a bank and adds money', { session: 'member', tags: ['smoke', 'wallet'] }, async ({ app, agent, screen, web }) => {
+test('links a bank and adds money', { session: 'member', tags: ['smoke', 'wallet'] }, async ({ app, agent, screen, browser }) => {
   await app.open('/');
   await agent.act('open Add money and link a bank account using {accountNumber}', {
     params: { accountNumber: '000123456789' },
   });
-  await expect(web).toHaveURL('/wallet/add-money');
+  await expect(browser).toHaveURL('/wallet/add-money');
   await expect(screen.getByTestId('funding-picker')).toContainText('6789');
 
   await agent.act('add {amount} from the linked bank account', {
@@ -76,10 +76,10 @@ test('splits a bill into requests', { session: 'member', tags: ['smoke', 'split'
   await expect(screen.getByText('E2E lunch', { exact: false })).toBeVisible();
 });
 
-test('verifies identity and creates a debit card', { session: 'member', tags: ['smoke', 'cards'] }, async ({ app, screen, web }) => {
+test('verifies identity and creates a debit card', { session: 'member', tags: ['smoke', 'cards'] }, async ({ app, screen, browser }) => {
   await app.open('/cards');
   await screen.getByRole('button', { name: 'Get the debit card' }).tap();
-  await expect(web).toHaveURL('/settings/verify?next=debit');
+  await expect(browser).toHaveURL('/settings/verify?next=debit');
 
   await screen.getByLabel('Date of birth (YYYY-MM-DD)').fill('1995-04-12');
   await screen.getByLabel('Last 4 of SSN').fill('1234');
@@ -88,10 +88,10 @@ test('verifies identity and creates a debit card', { session: 'member', tags: ['
   await expect(screen.getByTestId('verify-success')).toContainText("You're verified");
 
   await screen.getByRole('button', { name: 'Continue to card' }).tap();
-  await expect(web).toHaveURL('/cards/new?type=debit');
+  await expect(browser).toHaveURL('/cards/new?type=debit');
   await screen.getByRole('checkbox', { name: 'Agree to cardholder terms' }).check();
   await screen.getByRole('button', { name: 'Create my card' }).tap();
-  await expect(web).toHaveURL(/\/cards\/[^/]+\?fresh=1$/);
+  await expect(browser).toHaveURL(/\/cards\/[^/]+\?fresh=1$/);
   await expect(screen.getByTestId('card-fresh-banner')).toContainText('Your card is ready');
 
   await screen.getByRole('button', { name: 'Lock' }).tap();

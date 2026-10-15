@@ -38,24 +38,24 @@ test.describe('pay a business', { session: 'member', tags: ['merchants'] }, () =
     await expect(screen.getByTestId('balance-amount')).toHaveText('$0.00');
   });
 
-  test('pays a business by entering its store code', async ({ app, agent, screen, web }) => {
+  test('pays a business by entering its store code', async ({ app, agent, screen, browser }) => {
     await app.open('/');
     await agent.act('open Scan, enter the store code {code}, and continue', {
       params: { code: 'PPZ-M-TAQ' },
     });
-    await expect(web).toHaveURL(/\/merchants\/m_taqueria$/);
+    await expect(browser).toHaveURL(/\/merchants\/m_taqueria$/);
     await expect(screen.getByTestId('merchant-hero')).toContainText('La Esquina Taqueria');
 
     await agent.act('pay {amount} in store from the TesterPay balance', { params: { amount: '$3' } });
     await expect(screen.getByTestId('success-title')).toHaveText('You paid La Esquina Taqueria');
   });
 
-  test('rejects an unknown store code', async ({ app, agent, screen, web }) => {
+  test('rejects an unknown store code', async ({ app, agent, screen, browser }) => {
     await app.open('/qr?tab=scan');
     await agent.act('enter the code {code} and continue, then stop once the app responds', {
       params: { code: 'PPZ-M-NOPE' },
     });
     await expect(screen.getByText("We don't recognize that code.")).toBeVisible();
-    await expect(web).toHaveURL('/qr?tab=scan');
+    await expect(browser).toHaveURL('/qr?tab=scan');
   });
 });

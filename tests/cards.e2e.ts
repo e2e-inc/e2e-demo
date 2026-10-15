@@ -4,7 +4,7 @@ import { expect } from 'e2e';
 const identity = { dateOfBirth: '1990-08-21', ssnLast4: '5678', streetAddress: '42 Elm Street' };
 
 test.describe('cards', { session: 'member', tags: ['cards'] }, () => {
-  test('verifies identity and is approved for the credit card', async ({ app, agent, screen, web }) => {
+  test('verifies identity and is approved for the credit card', async ({ app, agent, screen, browser }) => {
     await app.open('/cards');
     await agent.act("start the credit card application and verify identity with the given details, stopping on the You're verified screen", {
       params: identity,
@@ -15,7 +15,7 @@ test.describe('cards', { session: 'member', tags: ['cards'] }, () => {
     await expect(screen.getByRole('checkbox', { name: 'Agree to cardholder terms' })).toBeChecked();
 
     await screen.getByRole('button', { name: 'Submit application' }).tap();
-    await expect(web).toHaveURL(/\/cards\/[^/]+\?fresh=1$/);
+    await expect(browser).toHaveURL(/\/cards\/[^/]+\?fresh=1$/);
     await expect(screen.getByTestId('card-fresh-banner')).toContainText('approved');
 
     await app.open('/cards');
