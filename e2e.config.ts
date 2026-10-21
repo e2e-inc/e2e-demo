@@ -3,7 +3,6 @@ import { web } from '@e2e-dev/web';
 import { gateway } from 'ai';
 
 export default {
-  // Screenshot tests use e2e.visual.config.ts and a separate artifact directory.
   tests: ['tests/*.e2e.ts'],
   // The Vercel AI Gateway serves the model id and reads AI_GATEWAY_API_KEY, or the OIDC token of a linked Vercel project.
   agents: {
