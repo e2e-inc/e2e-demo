@@ -8,6 +8,21 @@ npm install
 npm run dev   # http://localhost:3000
 ```
 
+## Screenshots
+
+![Home screen on desktop, with the sidebar, balance, quick actions, and the friends feed](docs/screenshots/desktop-home.png)
+
+<p>
+  <img src="docs/screenshots/mobile-welcome.png" alt="Welcome screen" width="195">
+  <img src="docs/screenshots/mobile-home.png" alt="Home screen on mobile" width="195">
+  <img src="docs/screenshots/mobile-cards.png" alt="Cards screen" width="195">
+  <img src="docs/screenshots/mobile-people.png" alt="People screen" width="195">
+</p>
+
+These are copies of the visual regression baselines (seeded account, 1440 × 1000 and 390 × 844).
+To refresh them after UI changes, copy the matching files from
+`tests/visual/baselines/darwin-arm64/` into `docs/screenshots/`.
+
 ## How it works
 
 - **No network backend.** The original Hono + SQLite backend runs in the browser

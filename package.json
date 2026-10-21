@@ -24,7 +24,7 @@
     "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
-    "@e2e-dev/web": "0.13.0",
+    "@e2e-dev/web": "0.15.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/pngjs": "^6.0.5",
@@ -32,7 +32,7 @@
     "@types/react-dom": "^19",
     "@types/sql.js": "^1.4.11",
     "ai": "^7.0.0",
-    "e2e": "0.18.0",
+    "e2e": "0.21.2",
     "eslint": "^9",
     "eslint-config-next": "16.3.7",
     "pixelmatch": "^8.0.0",
