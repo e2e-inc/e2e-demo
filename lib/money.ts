@@ -73,9 +73,17 @@ export function formatKeypadDisplay(text: string) {
     : `${wholeFormatted}.${fraction}`;
 }
 
+/**
+ * Parses a backend timestamp. SQLite's `CURRENT_TIMESTAMP` is
+ * "YYYY-MM-DD HH:MM:SS" in UTC, so it is converted to ISO 8601 first.
+ */
+function parseTimestamp(iso: string) {
+  return new Date(iso.includes('T') ? iso : `${iso.replace(' ', 'T')}Z`);
+}
+
 export function relativeTime(iso: string, now = Date.now()) {
-  const normalized = iso.includes('T') ? iso : `${iso.replace(' ', 'T')}Z`;
-  const then = new Date(normalized).getTime();
+  const date = parseTimestamp(iso);
+  const then = date.getTime();
   const seconds = Math.max(0, Math.round((now - then) / 1000));
 
   if (seconds < 60) return 'Just now';
@@ -85,15 +93,14 @@ export function relativeTime(iso: string, now = Date.now()) {
   if (hours < 24) return `${hours}h`;
   const days = Math.round(hours / 24);
   if (days < 7) return `${days}d`;
-  return new Date(normalized).toLocaleDateString('en-US', {
+  return date.toLocaleDateString('en-US', {
     month: 'short',
     day: 'numeric',
   });
 }
 
 export function fullDate(iso: string) {
-  const normalized = iso.includes('T') ? iso : `${iso.replace(' ', 'T')}Z`;
-  return new Date(normalized).toLocaleString('en-US', {
+  return parseTimestamp(iso).toLocaleString('en-US', {
     month: 'short',
     day: 'numeric',
     year: 'numeric',
