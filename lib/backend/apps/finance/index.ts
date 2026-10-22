@@ -1035,7 +1035,7 @@ financeRoutes.get('/qr/resolve', member, async (context) => {
     }
   }
 
-  return fail(context, 404, 'QR_UNKNOWN', "We don't recognize that code.");
+  return fail(context, 404, 'QR_UNKNOWN', 'That code has expired. Ask for a new one.');
 });
 
 // ---------------------------------------------------------------------------
