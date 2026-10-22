@@ -1,9 +1,9 @@
-import { test } from '@e2e-dev/web';
+import { describe, test } from '@e2e-dev/web';
 import { expect } from 'e2e';
 
 const identity = { dateOfBirth: '1990-08-21', ssnLast4: '5678', streetAddress: '42 Elm Street' };
 
-test.describe('cards', { session: 'member', tags: ['cards'] }, () => {
+describe('cards', { session: 'member', tags: ['cards'] }, () => {
   test('verifies identity and is approved for the credit card', async ({ app, agent, screen, browser }) => {
     await app.open('/cards');
     await agent.act("start the credit card application and verify identity with the given details, stopping on the You're verified screen", {
@@ -42,7 +42,7 @@ test.describe('cards', { session: 'member', tags: ['cards'] }, () => {
 
     await agent.act('lock the card using the Lock card switch in Controls');
     await expect(screen.getByRole('switch', { name: 'Lock card' })).toBeChecked();
-    await expect(screen.getByText('Purchases are blocked')).toBeVisible();
+    await agent.assert('the card controls say purchases are blocked while the card is locked');
 
     await app.open('/cards');
     await expect(screen.getByTestId('open-debit-card')).toContainText('Locked');

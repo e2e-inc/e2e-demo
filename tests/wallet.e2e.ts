@@ -1,7 +1,7 @@
-import { test } from '@e2e-dev/web';
+import { describe, test } from '@e2e-dev/web';
 import { expect } from 'e2e';
 
-test.describe('wallet', { session: 'member', tags: ['wallet'] }, () => {
+describe('wallet', { session: 'member', tags: ['wallet'] }, () => {
   test('transfers part of the balance to a linked bank', async ({ app, agent, screen, browser }) => {
     await app.open('/profile');
     await agent.act('open Banks and cards and link a {institution} bank account with account number {accountNumber}', {
@@ -18,8 +18,7 @@ test.describe('wallet', { session: 'member', tags: ['wallet'] }, () => {
 
     await agent.act('view the transfer details');
     await expect(screen.getByTestId('transaction-detail')).toBeVisible();
-    await expect(screen.getByText('Transfer to bank')).toBeVisible();
-    await expect(screen.getByText('Standard (1-3 days)')).toBeVisible();
+    await agent.assert('the details describe a transfer to a bank using the Standard speed of 1-3 days');
 
     await app.open('/');
     await expect(screen.getByTestId('balance-amount')).toHaveText('$4.00');

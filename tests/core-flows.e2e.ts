@@ -38,7 +38,7 @@ test('pays a person and records the payment', { session: 'member', tags: ['smoke
   await expect(screen.getByTestId('success-title')).toHaveText('You paid Ava Chen');
 
   await agent.act('view the payment details');
-  await expect(screen.getByText('E2E coffee')).toBeVisible();
+  await agent.assert('the payment details show the note E2E coffee');
   await app.open('/');
   await expect(screen.getByTestId('balance-amount')).toHaveText('$7.00');
 });

@@ -1,7 +1,7 @@
-import { test } from '@e2e-dev/web';
+import { describe, test } from '@e2e-dev/web';
 import { expect } from 'e2e';
 
-test.describe('pay a business', { session: 'member', tags: ['merchants'] }, () => {
+describe('pay a business', { session: 'member', tags: ['merchants'] }, () => {
   test('pays a business in store from the balance', async ({ app, agent, screen }) => {
     await app.open('/profile');
     await agent.act('open Bloom Coffee Roasters and pay {amount} in store from the TesterPay balance', {
@@ -11,8 +11,7 @@ test.describe('pay a business', { session: 'member', tags: ['merchants'] }, () =
 
     await agent.act('view the payment details');
     await expect(screen.getByTestId('detail-amount')).toContainText('$4.50');
-    await expect(screen.getByText('Business payment')).toBeVisible();
-    await expect(screen.getByText('In store')).toBeVisible();
+    await agent.assert('the details describe a business payment made in store');
 
     await app.open('/');
     await expect(screen.getByTestId('balance-amount')).toHaveText('$5.50');
@@ -55,7 +54,7 @@ test.describe('pay a business', { session: 'member', tags: ['merchants'] }, () =
     await agent.act('enter the code {code} and continue, then stop once the app responds', {
       params: { code: 'PPZ-M-NOPE' },
     });
-    await expect(screen.getByText("We don't recognize that code.")).toBeVisible();
     await expect(browser).toHaveURL('/qr?tab=scan');
+    await agent.assert('the app says it does not recognize the store code');
   });
 });

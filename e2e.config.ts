@@ -7,7 +7,7 @@ export default {
   // The Vercel AI Gateway serves the model id and reads AI_GATEWAY_API_KEY, or the OIDC token of a linked Vercel project.
   agents: {
     default: {
-      model: gateway('openai/gpt-6-luna'),
+      model: gateway('openai/gpt-6-luna-fast'),
       context: 'TesterPay is a local demo payment app. New members start with a $10 TesterPay balance. Payments, requests, bank links, identity checks, and cards are simulated. Ava Chen and Marcus Reed are searchable demo people.',
       system: 'Use the visible UI to complete the stated goal. Read confirmation screens before submitting, and stop when the requested outcome is visible.',
     },
@@ -34,4 +34,5 @@ export default {
       password: process.env.E2E_NEWCOMER_PASSWORD ?? 'NewcomerPass456!',
     },
   },
+  workers: 5
 } satisfies E2EConfig;

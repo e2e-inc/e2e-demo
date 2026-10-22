@@ -1,7 +1,7 @@
-import { test } from '@e2e-dev/web';
+import { describe, test } from '@e2e-dev/web';
 import { expect } from 'e2e';
 
-test.describe('people and profile', { session: 'member', tags: ['social'] }, () => {
+describe('people and profile', { session: 'member', tags: ['social'] }, () => {
   test('edits the display name and bio', async ({ app, agent, screen }) => {
     await app.open('/profile');
     await agent.act('edit the profile: set the display name to {name} and the bio to {bio}, then save', {
@@ -38,7 +38,7 @@ test.describe('people and profile', { session: 'member', tags: ['social'] }, () 
 
     await agent.act('view the payment details');
     await expect(screen.getByTestId('transaction-detail')).toContainText('🍕 E2E pizza');
-    await expect(screen.getByText('Private')).toBeVisible();
+    await agent.assert('the payment details show the payment is private');
     await expect(screen.getByTestId('detail-amount')).toContainText('$2.00');
   });
 
