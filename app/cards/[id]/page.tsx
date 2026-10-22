@@ -177,7 +177,7 @@ export default function CardDetail() {
         <ListRow
           title="Lock card"
           subtitle={
-            locked ? 'Purchases are blocked' : 'Instantly block all purchases'
+            !locked ? 'Purchases are blocked' : 'Instantly block all purchases'
           }
           right={
             <Switch
