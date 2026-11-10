@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-10T11:11:06.167Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Order physical card\"",
+        "target": {
+          "role": "button",
+          "name": "Order physical card",
+          "testId": "card-order-physical"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/cards.e2e.ts::cards::manages%20debit%20card%20controls",
+      "targetId": "web",
+      "instructionDigest": "0e09375afdd7429a36092c6d4ffc3aec24ebc8f525959cbeaf39afc1f54b7bae",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Ordered the physical card. The card page now says “Your card is on the way,” and shows an option to activate it when it arrives.",
+    "startPath": "/cards/d77d75a9-90b6-4994-ac16-aca9faa4c8a4?fresh=1",
+    "endPath": "/cards/d77d75a9-90b6-4994-ac16-aca9faa4c8a4?fresh=1",
+    "endAnchors": [
+      {
+        "text": "Your card is on the way"
+      },
+      {
+        "text": "Got it already? Activate it here."
+      },
+      {
+        "text": "Activate card"
+      },
+      {
+        "role": "button",
+        "name": "Activate card",
+        "testId": "card-activate-physical"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "Want a card in your wallet?"
+      },
+      {
+        "text": "Ships free in 5-7 business days."
+      },
+      {
+        "text": "Order physical card"
+      },
+      {
+        "role": "button",
+        "name": "Order physical card",
+        "testId": "card-order-physical"
+      }
+    ],
+    "endWaitMs": 11600,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

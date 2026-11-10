@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:38.561Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"7\"",
+        "target": {
+          "role": "button",
+          "name": "7",
+          "testId": "key-7"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \".\"",
+        "target": {
+          "role": "button",
+          "name": ".",
+          "testId": "key-."
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"5\"",
+        "target": {
+          "role": "button",
+          "name": "5",
+          "testId": "key-5"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"0\"",
+        "target": {
+          "role": "button",
+          "name": "0",
+          "testId": "key-0"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/social.e2e.ts::people%20and%20profile::creates%20a%20QR%20code%20that%20requests%20a%20set%20amount",
+      "targetId": "web",
+      "instructionDigest": "bfa42c70e0d5ff1ba20c5a511253c872c588e4920c50f6edbf2da2b1e60e558b",
+      "paramsDigest": "33d59cfdaa47d7c24a3b8bf9483850db77f12e5c528d12dafc0f7defb84326da",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Entered 7.50 using the amount keypad. The amount display now shows $7.50; no other form values were changed.",
+    "startPath": "/qr/request",
+    "endPath": "/qr/request",
+    "endAnchors": [
+      {
+        "text": "7.50",
+        "testId": "amount-display"
+      },
+      {
+        "name": "Amount 7.50"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "name": "Amount 0"
+      }
+    ],
+    "endWaitMs": 11461,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:21:44.812Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"4\"",
+        "target": {
+          "role": "button",
+          "name": "4",
+          "testId": "key-4"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \".\"",
+        "target": {
+          "role": "button",
+          "name": ".",
+          "testId": "key-."
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"5\"",
+        "target": {
+          "role": "button",
+          "name": "5",
+          "testId": "key-5"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"0\"",
+        "target": {
+          "role": "button",
+          "name": "0",
+          "testId": "key-0"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Pay $4.50\"",
+        "target": {
+          "role": "button",
+          "name": "Pay $4.50",
+          "testId": "merchant-pay-submit"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/merchants.e2e.ts::pay%20a%20business::pays%20a%20business%20in%20store%20from%20the%20balance",
+      "targetId": "web",
+      "instructionDigest": "a615ee3852683e909189d63511938f10b03336b5e1385fbc7a80aaf48f9f4302",
+      "paramsDigest": "52df4f4521e2a70d19b5c7495cb56b7db5ed0209e3043e0724387f596575be55",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Paid $4.50 to Bloom Coffee Roasters in store using the TesterPay balance. The success screen confirms “You paid Bloom Coffee Roasters” and shows $4.50.",
+    "startPath": "/merchants/m_bloom",
+    "endPath": "/pay/success?kind=merchant&amount=450&name=Bloom+Coffee+Roasters&color=%23FB5E1B&id=b6a43703-7256-406c-ada0-69d161f20d6f&body=Show+this+screen+to+the+cashier.+You%E2%80%99re+all+set.",
+    "endAnchors": [
+      {
+        "text": "BC"
+      },
+      {
+        "text": "$4.50"
+      },
+      {
+        "text": "You paid Bloom Coffee Roasters",
+        "testId": "success-title"
+      },
+      {
+        "text": "Show this screen to the cashier. You’re all set."
+      },
+      {
+        "text": "View details"
+      },
+      {
+        "text": "Done"
+      },
+      {
+        "testId": "success-screen"
+      },
+      {
+        "role": "image",
+        "name": "Bloom Coffee Roasters"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "button",
+        "name": "Back"
+      },
+      {
+        "role": "heading",
+        "name": "Bloom Coffee Roasters"
+      },
+      {
+        "text": "☕️"
+      },
+      {
+        "text": "Bloom Coffee Roasters"
+      },
+      {
+        "text": "Single-origin pour-overs since 2016"
+      },
+      {
+        "text": "Store code PPZ-M-BLOOM"
+      },
+      {
+        "text": "Pay in store"
+      },
+      {
+        "text": "Online checkout"
+      }
+    ],
+    "endWaitMs": 12199,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

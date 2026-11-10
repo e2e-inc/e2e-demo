@@ -1,0 +1,122 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:37.732Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "type",
+        "summary": "type \"nova-e2e\" into textbox \"Handle\"",
+        "target": {
+          "role": "textbox",
+          "name": "Handle",
+          "testId": "handle-input",
+          "placeholder": "jordan-lee"
+        },
+        "value": "nova-e2e"
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Continue\"",
+        "target": {
+          "role": "button",
+          "name": "Continue",
+          "testId": "handle-submit"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/account.e2e.ts::signs%20up%20a%20new%20member%20with%20a%20custom%20handle",
+      "targetId": "web",
+      "instructionDigest": "91a09e51ccbd321806b661c7acd77f58d0821b2c80682f8bdf531e36d5705201",
+      "paramsDigest": "7d2a91d9a270f7a7663d275bccb609c3bef4addb0144fc3dd6f0dac83ad15996",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Set the handle to nova-e2e; it was shown as available. Continued to the home screen, where the profile shows @nova-e2e.",
+    "startPath": "/onboarding/handle",
+    "endPath": "/",
+    "endAnchors": [
+      {
+        "role": "link",
+        "name": "testerpay"
+      },
+      {
+        "text": "Home"
+      },
+      {
+        "text": "Cards"
+      },
+      {
+        "text": "Activity"
+      },
+      {
+        "text": "Friends"
+      },
+      {
+        "text": "Businesses"
+      },
+      {
+        "text": "Settings"
+      },
+      {
+        "text": "Pay or request"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "heading",
+        "name": "Your profile"
+      },
+      {
+        "role": "button",
+        "name": "Sign out"
+      },
+      {
+        "role": "heading",
+        "name": "Pick your handle"
+      },
+      {
+        "text": "Friends pay you with it, so make it easy to remember."
+      },
+      {
+        "text": "Display name"
+      },
+      {
+        "role": "textbox",
+        "name": "Display name",
+        "testId": "handle-display-name",
+        "placeholder": "Jordan Lee",
+        "value": "Nova Quinn"
+      },
+      {
+        "text": "Handle"
+      },
+      {
+        "role": "textbox",
+        "name": "Handle",
+        "testId": "handle-input",
+        "placeholder": "jordan-lee",
+        "value": "nova-quinn"
+      }
+    ],
+    "endWaitMs": 11628,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

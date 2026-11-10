@@ -1,0 +1,133 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:18:33.491Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap link \"Already have an account? Sign in\"",
+        "target": {
+          "role": "link",
+          "name": "Already have an account? Sign in",
+          "testId": "welcome-sign-in"
+        }
+      },
+      {
+        "name": "type",
+        "summary": "type \"e2e.member@example.test\" into textbox \"Email\"",
+        "target": {
+          "role": "textbox",
+          "name": "Email",
+          "testId": "sign-in-email",
+          "placeholder": "you@example.com"
+        },
+        "value": "e2e.member@example.test"
+      },
+      {
+        "name": "typeSecret",
+        "summary": "fill secret \"member.password\" into textbox \"Password\"",
+        "target": {
+          "role": "textbox",
+          "name": "Password",
+          "testId": "sign-in-password",
+          "placeholder": "Your password",
+          "inputPurpose": "password"
+        },
+        "secret": "member.password"
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Sign in\"",
+        "target": {
+          "role": "button",
+          "name": "Sign in",
+          "testId": "sign-in-submit"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/core-flows.e2e.ts::signs%20out%20and%20signs%20back%20in",
+      "targetId": "web",
+      "instructionDigest": "0f07617ab201c21b6203575e068a4e54bd702ca5a7ddbad6488704d53d680806",
+      "paramsDigest": "c7cfa82879c2e5e3a4d7f96a22fb3d51e53cfdc18db051be25982ebfca97ca4e",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Signed in with e2e.member@example.test. The app now shows the authenticated home navigation and the E2E Member profile (@e2e-member).",
+    "startPath": "/welcome",
+    "endPath": "/",
+    "endAnchors": [
+      {
+        "role": "link",
+        "name": "testerpay"
+      },
+      {
+        "text": "Home"
+      },
+      {
+        "text": "Cards"
+      },
+      {
+        "text": "Activity"
+      },
+      {
+        "text": "Friends"
+      },
+      {
+        "text": "Businesses"
+      },
+      {
+        "text": "Settings"
+      },
+      {
+        "text": "Pay or request"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "testerpay"
+      },
+      {
+        "role": "heading",
+        "name": "Pay friends. Split anything."
+      },
+      {
+        "text": "Send, request, and split money with the people you actually hang out with."
+      },
+      {
+        "text": "Ava Chen paid Marcus for Taco Tuesday 🌮"
+      },
+      {
+        "text": "PP"
+      },
+      {
+        "text": "Priya Patel split the cabin with 4 people 🏕️"
+      },
+      {
+        "text": "LA"
+      },
+      {
+        "text": "Leo Alvarez requested $12 for tickets 🎸"
+      }
+    ],
+    "endWaitMs": 11829,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

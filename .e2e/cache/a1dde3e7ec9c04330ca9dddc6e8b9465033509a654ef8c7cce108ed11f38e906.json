@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:14.461Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "type",
+        "summary": "type \"PPZ-M-TAQ\" into textbox \"Enter a code or @handle\"",
+        "target": {
+          "role": "textbox",
+          "name": "Enter a code or @handle",
+          "testId": "qr-manual-input",
+          "placeholder": "PPZ-M-BLOOM or @ava-chen"
+        },
+        "value": "PPZ-M-TAQ"
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Continue\"",
+        "target": {
+          "role": "button",
+          "name": "Continue",
+          "testId": "qr-manual-submit"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/merchants.e2e.ts::pay%20a%20business::pays%20a%20business%20by%20entering%20its%20store%20code",
+      "targetId": "web",
+      "instructionDigest": "55309147bc8c4431ab5dfe45ca0dbbe092d92f6477fef49bd600777369fc05ee",
+      "paramsDigest": "aaa188e43504c55fe615a3c91049a7d2ae0d50122ce5785206d01e527f53a723",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Entered store code PPZ-M-TAQ and continued. TesterPay opened La Esquina Taqueria, displaying store code PPZ-M-TAQ.",
+    "startPath": "/qr?tab=scan",
+    "endPath": "/merchants/m_taqueria",
+    "endAnchors": [
+      {
+        "role": "heading",
+        "name": "La Esquina Taqueria"
+      },
+      {
+        "text": "🌮"
+      },
+      {
+        "text": "La Esquina Taqueria"
+      },
+      {
+        "text": "Street tacos, all day"
+      },
+      {
+        "text": "Store code PPZ-M-TAQ"
+      },
+      {
+        "text": "Pay in store"
+      },
+      {
+        "text": "Online checkout"
+      },
+      {
+        "text": "Enter the amount on the register"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "heading",
+        "name": "Scan & pay"
+      },
+      {
+        "text": "My code"
+      },
+      {
+        "text": "Scan"
+      },
+      {
+        "text": "Camera scanning is mobile-only"
+      },
+      {
+        "text": "Paste a code below to pay a person or business."
+      },
+      {
+        "text": "Enter a code or @handle"
+      },
+      {
+        "role": "textbox",
+        "name": "Enter a code or @handle",
+        "testId": "qr-manual-input",
+        "placeholder": "PPZ-M-BLOOM or @ava-chen"
+      },
+      {
+        "text": "Continue"
+      }
+    ],
+    "endWaitMs": 11447,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

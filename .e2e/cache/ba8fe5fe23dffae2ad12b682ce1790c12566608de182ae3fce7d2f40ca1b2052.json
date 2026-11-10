@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:03.482Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"View details\"",
+        "target": {
+          "role": "button",
+          "name": "View details",
+          "testId": "success-details"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/merchants.e2e.ts::pay%20a%20business::covers%20an%20online%20order%20the%20balance%20cannot%20afford%20with%20a%20bank",
+      "targetId": "web",
+      "instructionDigest": "f879436a8fc6b3a143293542a6635018d6b6f4cbac4b72d2231b6600ccff7a33",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Opened View details. The payment details show a completed $24.00 Noodle Theory business payment, funded by Balance + Northwind Bank Checking ending in 4321, through Online checkout.",
+    "startPath": "/pay/success?kind=merchant&amount=2400&name=Noodle+Theory&color=%23E074FF&id=bdb7ee0b-1eac-44f7-b24e-8147aa232f8f&body=Your+order+is+confirmed.+A+receipt+is+in+your+activity.",
+    "endPath": "/activity/bdb7ee0b-1eac-44f7-b24e-8147aa232f8f",
+    "endAnchors": [
+      {
+        "role": "button",
+        "name": "Back"
+      },
+      {
+        "role": "heading",
+        "name": "Details"
+      },
+      {
+        "text": "🍜"
+      },
+      {
+        "text": "- $24.00",
+        "testId": "detail-amount"
+      },
+      {
+        "text": "Status"
+      },
+      {
+        "text": "Completed"
+      },
+      {
+        "text": "Date"
+      },
+      {
+        "text": "Type"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "NT"
+      },
+      {
+        "text": "$24.00"
+      },
+      {
+        "text": "Your order is confirmed. A receipt is in your activity."
+      },
+      {
+        "text": "View details"
+      },
+      {
+        "text": "Done"
+      },
+      {
+        "testId": "success-screen"
+      },
+      {
+        "role": "image",
+        "name": "Noodle Theory"
+      },
+      {
+        "role": "button",
+        "name": "View details",
+        "testId": "success-details"
+      }
+    ],
+    "endWaitMs": 11573,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

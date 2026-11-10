@@ -1,0 +1,129 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:11.632Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Link a bank or card\"",
+        "target": {
+          "role": "button",
+          "name": "Link a bank or card",
+          "testId": "link-new-source"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap tab \"Debit card\"",
+        "target": {
+          "role": "tab",
+          "name": "Debit card"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Atlas Card\"",
+        "target": {
+          "role": "button",
+          "name": "Atlas Card"
+        }
+      },
+      {
+        "name": "type",
+        "summary": "type \"4111 1111 1111 4242\" into textbox \"Card number\"",
+        "target": {
+          "role": "textbox",
+          "name": "Card number",
+          "testId": "link-account-number",
+          "placeholder": "4111 1111 1111 1111"
+        },
+        "value": "4111 1111 1111 4242"
+      },
+      {
+        "name": "type",
+        "summary": "type \"12/28\" into textbox \"Expiry\"",
+        "target": {
+          "role": "textbox",
+          "name": "Expiry",
+          "placeholder": "MM/YY"
+        },
+        "value": "12/28"
+      },
+      {
+        "name": "type",
+        "summary": "type \"123\" into textbox \"CVV\"",
+        "target": {
+          "role": "textbox",
+          "name": "CVV",
+          "placeholder": "123"
+        },
+        "value": "123"
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Link debit card\"",
+        "target": {
+          "role": "button",
+          "name": "Link debit card",
+          "testId": "link-submit"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/wallet.e2e.ts::wallet::sends%20an%20instant%20transfer%20to%20a%20debit%20card%20and%20pays%20the%20fee",
+      "targetId": "web",
+      "instructionDigest": "fd4b2c2b7b2b81f0147216a11bf1759b7ac2724a1e652238c1908a79fabb3bc1",
+      "paramsDigest": "8f2034f40b5cb15ef50f317eba478e99c517d07f6bee3d571af98758a4d2769b",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Linked the Atlas Card debit card ending in 4242. The Banks and cards screen now shows “Atlas Card Debit ••4242” as the default.",
+    "startPath": "/wallet/funding-sources",
+    "endPath": "/wallet/funding-sources",
+    "endAnchors": [
+      {
+        "text": "Atlas Card Debit ••4242"
+      },
+      {
+        "text": "Debit card · Default"
+      },
+      {
+        "role": "button",
+        "name": "Remove Atlas Card Debit ••4242"
+      },
+      {
+        "testId": "funding-list"
+      },
+      {
+        "testId": "funding-row-4242"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "Nothing linked yet"
+      },
+      {
+        "text": "Link a bank account or debit card to move money in and out."
+      }
+    ],
+    "endWaitMs": 11752,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

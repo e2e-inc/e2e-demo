@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-10T11:34:31.897Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "check",
+        "summary": "check checkbox \"Agree to cardholder terms\"",
+        "target": {
+          "role": "checkbox",
+          "name": "Agree to cardholder terms",
+          "testId": "card-agree"
+        },
+        "checked": true
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Submit application\"",
+        "target": {
+          "role": "button",
+          "name": "Submit application",
+          "testId": "card-issue-submit"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/cards.e2e.ts::cards::verifies%20identity%20and%20is%20approved%20for%20the%20credit%20card",
+      "targetId": "web",
+      "instructionDigest": "a6a7f4f3c3333d49b7ded33f3190c19265873590eaa05b8ffb3e76f21e1c1037",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "The current screen shows “You’re approved!” with a $3,000 credit limit and the issued credit card ending in 7237, confirming the application was submitted successfully.",
+    "startPath": "/cards/new?type=credit",
+    "endPath": "/cards/0ec72dd2-a582-4f1e-9a86-9cb3c69958f3?fresh=1",
+    "endAnchors": [
+      {
+        "role": "heading",
+        "name": "Credit card"
+      },
+      {
+        "text": "You’re approved!"
+      },
+      {
+        "text": "Credit limit $3,000. Use it online right now."
+      },
+      {
+        "text": "•••• •••• •••• 7237"
+      },
+      {
+        "text": "11/30"
+      },
+      {
+        "text": "Lock"
+      },
+      {
+        "text": "Show"
+      },
+      {
+        "text": "Spend"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "heading",
+        "name": "Apply for credit"
+      },
+      {
+        "text": "•••• •••• •••• ••••"
+      },
+      {
+        "text": "12/30"
+      },
+      {
+        "role": "heading",
+        "name": "Instant decision, no hard pull"
+      },
+      {
+        "text": "As a verified member you're pre-approved for a $3,000 limit. Pay your bill from your balance any time."
+      },
+      {
+        "text": "I agree to the cardholder agreement and understand this is a demo card with simulated transactions."
+      },
+      {
+        "text": "Submit application"
+      },
+      {
+        "role": "image",
+        "name": "credit card ending in ••••",
+        "testId": "payment-card-credit"
+      }
+    ],
+    "endWaitMs": 10096,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

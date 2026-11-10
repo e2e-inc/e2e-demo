@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:11.633Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Instant transfer\"",
+        "target": {
+          "role": "button",
+          "name": "Instant transfer",
+          "testId": "speed-instant"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"4\"",
+        "target": {
+          "role": "button",
+          "name": "4",
+          "testId": "key-4"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/wallet.e2e.ts::wallet::sends%20an%20instant%20transfer%20to%20a%20debit%20card%20and%20pays%20the%20fee",
+      "targetId": "web",
+      "instructionDigest": "faf192b80a6ec2e690a046a1a724bc78eb74092fefff2ec1c484771bdd7f271c",
+      "paramsDigest": "d8110a357a5ef3e07c008108f171e47e38f777a8fdb3c5f777382173b7fac852",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Selected Instant transfer and entered $4.00 for Atlas Card Debit ending in 4242. The screen shows the $0.25 fee and Transfer $4.00 button; I did not submit the transfer.",
+    "startPath": "/wallet/transfer",
+    "endPath": "/wallet/transfer",
+    "endAnchors": [
+      {
+        "text": "1.75% fee (min $0.25) · $0.25 · debit card only"
+      },
+      {
+        "text": "Transfer $4.00"
+      },
+      {
+        "name": "Amount 4"
+      },
+      {
+        "role": "button",
+        "name": "Instant transfer",
+        "testId": "speed-instant",
+        "states": [
+          "pressed"
+        ]
+      },
+      {
+        "role": "button",
+        "name": "Standard transfer",
+        "testId": "speed-standard"
+      },
+      {
+        "role": "button",
+        "name": "Transfer $4.00",
+        "testId": "transfer-submit"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "1.75% fee (min $0.25) · · debit card only"
+      },
+      {
+        "text": "Transfer"
+      },
+      {
+        "name": "Amount 0"
+      },
+      {
+        "role": "button",
+        "name": "Instant transfer",
+        "testId": "speed-instant"
+      },
+      {
+        "role": "button",
+        "name": "Standard transfer",
+        "testId": "speed-standard",
+        "states": [
+          "pressed"
+        ]
+      },
+      {
+        "role": "button",
+        "name": "Transfer",
+        "testId": "transfer-submit"
+      }
+    ],
+    "endWaitMs": 11563,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

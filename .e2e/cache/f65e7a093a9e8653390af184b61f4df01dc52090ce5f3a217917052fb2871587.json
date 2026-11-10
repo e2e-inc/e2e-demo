@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:18:51.995Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Done\"",
+        "target": {
+          "role": "button",
+          "name": "Done",
+          "testId": "success-done"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/core-flows.e2e.ts::links%20a%20bank%20and%20adds%20money",
+      "targetId": "web",
+      "instructionDigest": "dcb32a9a0c82a4202fc9b66e98141862403fff63c3713183881e04f25ff14603",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Tapped Done on the $20.00 add-money success screen and returned to the home dashboard. The dashboard shows a TesterPay balance of $30.00.",
+    "startPath": "/pay/success?kind=add&amount=2000&name=Northwind+Bank&color=%234BB4FF&id=4ea734af-f0b1-4e24-8ccd-7d57ed7f11bf&title=Added+%2420.00&body=Your+new+balance+is+%2430.00.",
+    "endPath": "/",
+    "endAnchors": [
+      {
+        "role": "heading",
+        "name": "Welcome back, E2E"
+      },
+      {
+        "text": "Your money. Your people. All in one place."
+      },
+      {
+        "role": "button",
+        "name": "Find people",
+        "testId": "home-search"
+      },
+      {
+        "role": "button",
+        "name": "Show my code",
+        "testId": "home-qr"
+      },
+      {
+        "text": "TesterPay balance"
+      },
+      {
+        "text": "$30.00",
+        "testId": "balance-amount"
+      },
+      {
+        "text": "Add money"
+      },
+      {
+        "text": "Transfer"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "NB"
+      },
+      {
+        "text": "$20.00"
+      },
+      {
+        "text": "Added $20.00",
+        "testId": "success-title"
+      },
+      {
+        "text": "Your new balance is $30.00."
+      },
+      {
+        "text": "View details"
+      },
+      {
+        "text": "Done"
+      },
+      {
+        "testId": "success-screen"
+      },
+      {
+        "role": "image",
+        "name": "Northwind Bank"
+      }
+    ],
+    "endWaitMs": 11488,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

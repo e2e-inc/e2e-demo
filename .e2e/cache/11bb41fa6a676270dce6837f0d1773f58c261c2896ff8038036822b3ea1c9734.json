@@ -1,0 +1,117 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-10T12:02:16.321Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Continue to card\"",
+        "target": {
+          "role": "button",
+          "name": "Continue to card",
+          "testId": "verify-done"
+        }
+      },
+      {
+        "name": "check",
+        "summary": "check checkbox \"Agree to cardholder terms\"",
+        "target": {
+          "role": "checkbox",
+          "name": "Agree to cardholder terms",
+          "testId": "card-agree"
+        },
+        "checked": true
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Create my card\"",
+        "target": {
+          "role": "button",
+          "name": "Create my card",
+          "testId": "card-issue-submit"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/core-flows.e2e.ts::verifies%20identity%20and%20creates%20a%20debit%20card",
+      "targetId": "web",
+      "instructionDigest": "07a1f3a4c67dd6cf949556d1c1ca7a09fbca8c411e527b51bf9e7b47311de451",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "The current Debit card screen shows “Your card is ready” and a virtual debit card ending in 4197, confirming the card was created.",
+    "startPath": "/settings/verify?next=debit",
+    "endPath": "/cards/816d5277-42e1-42b1-ae1d-0ed32a408d32?fresh=1",
+    "endAnchors": [
+      {
+        "role": "heading",
+        "name": "Debit card"
+      },
+      {
+        "text": "Your card is ready"
+      },
+      {
+        "text": "Use the virtual card online now, or order a physical card below."
+      },
+      {
+        "text": "testerpay"
+      },
+      {
+        "text": "DEBIT"
+      },
+      {
+        "text": "•••• •••• •••• 4197"
+      },
+      {
+        "text": "E2E MEMBER"
+      },
+      {
+        "text": "EXP"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "heading",
+        "name": "Identity"
+      },
+      {
+        "role": "heading",
+        "name": "You're verified"
+      },
+      {
+        "text": "Cards, bank transfers, and higher limits are unlocked."
+      },
+      {
+        "text": "Continue to card"
+      },
+      {
+        "testId": "verify-success"
+      },
+      {
+        "role": "button",
+        "name": "Continue to card",
+        "testId": "verify-done"
+      }
+    ],
+    "endWaitMs": 10110,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

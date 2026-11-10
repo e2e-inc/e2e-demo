@@ -1,0 +1,150 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:18:46.627Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"6\"",
+        "target": {
+          "role": "button",
+          "name": "6",
+          "testId": "key-6"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"0\"",
+        "target": {
+          "role": "button",
+          "name": "0",
+          "testId": "key-0"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"0\"",
+        "target": {
+          "role": "button",
+          "name": "0",
+          "testId": "key-0"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Delete\"",
+        "target": {
+          "role": "button",
+          "name": "Delete",
+          "testId": "key-backspace"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Delete\"",
+        "target": {
+          "role": "button",
+          "name": "Delete",
+          "testId": "key-backspace"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Transfer $6.00\"",
+        "target": {
+          "role": "button",
+          "name": "Transfer $6.00",
+          "testId": "transfer-submit"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/wallet.e2e.ts::wallet::transfers%20part%20of%20the%20balance%20to%20a%20linked%20bank",
+      "targetId": "web",
+      "instructionDigest": "847ee03f111c940f4365ebce0afb086dd0c1ab775cb86f675a92e4826bd9c019",
+      "paramsDigest": "538aa48612f9f91a90a36162a8bfaa2fc6484a9e745354deb2a092a37ea7db7a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Transferred $6.00 using Standard transfer to Summit Federal Checking ••3210. The success screen confirms it will arrive in 1–3 business days.",
+    "startPath": "/wallet/transfer",
+    "endPath": "/pay/success?kind=transfer&amount=600&name=Summit+Federal&color=%234BB4FF&id=2e9e2f74-8121-4248-a863-ae124d9a93c7&title=Transfer+on+its+way&body=%246.00+will+arrive+at+Summit+Federal+Checking+%E2%80%A2%E2%80%A23210+in+1-3+business+days.",
+    "endAnchors": [
+      {
+        "text": "SF"
+      },
+      {
+        "text": "$6.00"
+      },
+      {
+        "text": "Transfer on its way",
+        "testId": "success-title"
+      },
+      {
+        "text": "$6.00 will arrive at Summit Federal Checking ••3210 in 1-3 business days."
+      },
+      {
+        "text": "View details"
+      },
+      {
+        "text": "Done"
+      },
+      {
+        "testId": "success-screen"
+      },
+      {
+        "role": "image",
+        "name": "Summit Federal"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "button",
+        "name": "Back"
+      },
+      {
+        "role": "heading",
+        "name": "Transfer to bank"
+      },
+      {
+        "text": "Available $10.00"
+      },
+      {
+        "text": "$",
+        "testId": "amount-currency"
+      },
+      {
+        "text": "0",
+        "testId": "amount-display"
+      },
+      {
+        "text": "Transfer all"
+      },
+      {
+        "text": "Instant"
+      },
+      {
+        "text": "1.75% fee (min $0.25) · · debit card only"
+      }
+    ],
+    "endWaitMs": 11650,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

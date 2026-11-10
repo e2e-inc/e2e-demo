@@ -1,0 +1,103 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:07.903Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"View details\"",
+        "target": {
+          "role": "button",
+          "name": "View details",
+          "testId": "success-details"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/social.e2e.ts::people%20and%20profile::pays%20privately%20with%20a%20note%20and%20emoji",
+      "targetId": "web",
+      "instructionDigest": "f879436a8fc6b3a143293542a6635018d6b6f4cbac4b72d2231b6600ccff7a33",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Opened View details for the completed payment. The details screen shows Marcus Reed, −$2.00, “🍕 E2E pizza,” Completed status, TesterPay balance funding, and Private visibility.",
+    "startPath": "/pay/success?kind=pay&amount=200&name=Marcus+Reed&color=%23FB5E1B&id=1e35e200-ee06-4019-af6f-790c0c6bfe30",
+    "endPath": "/activity/1e35e200-ee06-4019-af6f-790c0c6bfe30",
+    "endAnchors": [
+      {
+        "role": "button",
+        "name": "Back"
+      },
+      {
+        "role": "heading",
+        "name": "Details"
+      },
+      {
+        "text": "- $2.00",
+        "testId": "detail-amount"
+      },
+      {
+        "text": "🍕 E2E pizza"
+      },
+      {
+        "text": "Pay again"
+      },
+      {
+        "text": "Split"
+      },
+      {
+        "text": "Profile"
+      },
+      {
+        "text": "Status"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "$2.00"
+      },
+      {
+        "text": "Marcus Reed has the money. That was easy."
+      },
+      {
+        "text": "View details"
+      },
+      {
+        "text": "Done"
+      },
+      {
+        "testId": "success-screen"
+      },
+      {
+        "role": "button",
+        "name": "View details",
+        "testId": "success-details"
+      },
+      {
+        "role": "button",
+        "name": "Done",
+        "testId": "success-done"
+      }
+    ],
+    "endWaitMs": 12113,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}
