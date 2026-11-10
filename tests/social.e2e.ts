@@ -31,6 +31,29 @@ describe('people and profile', { session: 'member', tags: ['social'] }, () => {
     await agent.assert("Priya Patel's profile offers to add her as a friend");
   });
 
+  test('switches the home feed between Friends and Everyone', async ({ app, agent, screen }) => {
+    await app.open('/');
+    const friends = screen.getByRole('tab', { name: 'Friends' });
+    const everyone = screen.getByRole('tab', { name: 'Everyone' });
+    // A new member has no friends yet, so the default Friends feed is empty.
+    await expect(friends).toHaveAttribute('aria-selected', 'true');
+    await expect(everyone).toHaveAttribute('aria-selected', 'false');
+    await agent.waitFor('the Your circle feed says Your feed is quiet');
+
+    await everyone.click();
+    await expect(everyone).toHaveAttribute('aria-selected', 'true');
+    await expect(friends).toHaveAttribute('aria-selected', 'false');
+    await agent.waitFor('the feed lists public payments, including Ava Chen paying Marcus Reed for Taco Tuesday');
+    // The pill slides over rather than jumping, so wait for it to settle.
+    await agent.waitFor('the black pill in the Friends/Everyone switch sits fully behind Everyone, with Everyone in white text', { vision: true });
+
+    await friends.click();
+    await expect(friends).toHaveAttribute('aria-selected', 'true');
+    await expect(everyone).toHaveAttribute('aria-selected', 'false');
+    await agent.waitFor('the Your circle feed says Your feed is quiet');
+    await agent.waitFor('the black pill in the Friends/Everyone switch sits fully behind Friends, with Friends in white text', { vision: true });
+  });
+
   test('pays privately with a note and emoji', async ({ app, agent, screen }) => {
     await app.open('/');
     await agent.act('prepare a payment to Marcus Reed for {amount} from the balance with the note {note}, pick the {emoji} emoji button below the note, choose Private visibility, and open the payment confirmation without confirming it', {
