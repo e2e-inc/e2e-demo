@@ -44,7 +44,6 @@ describe('people and profile', { session: 'member', tags: ['social'] }, () => {
     await expect(everyone).toHaveAttribute('aria-selected', 'true');
     await expect(friends).toHaveAttribute('aria-selected', 'false');
     await agent.waitFor('the feed lists public payments, including Ava Chen paying Marcus Reed for Taco Tuesday');
-    // The pill slides over rather than jumping, so wait for it to settle.
     await agent.waitFor('the black pill in the Friends/Everyone switch sits fully behind Everyone, with Everyone in white text', { vision: true });
 
     await friends.click();

@@ -564,19 +564,8 @@ export function Segmented<T extends string>({
   value: T;
   onChange: (value: T) => void;
 }) {
-  const activeIndex = options.findIndex((option) => option.value === value);
   return (
     <div className={styles.segmented} role="tablist">
-      {activeIndex >= 0 ? (
-        <span
-          aria-hidden
-          className={styles.segmentIndicator}
-          style={{
-            width: `calc((100% - 0.5rem - ${(options.length - 1) * 0.25}rem) / ${options.length})`,
-            transform: `translateX(calc(${activeIndex} * (100% + 0.25rem)))`,
-          }}
-        />
-      ) : null}
       {options.map((option) => {
         const active = option.value === value;
         return (
@@ -587,13 +576,11 @@ export function Segmented<T extends string>({
             aria-selected={active}
             aria-label={option.label}
             onClick={() => onChange(option.value)}
-            className={styles.segment}
+            className={twMerge(styles.segment, active && styles.segmentActive)}
           >
             <span
-              className={twMerge(
-                styles.segmentLabel,
-                active && styles.segmentLabelActive,
-              )}
+              className={styles.segmentLabel}
+              style={active ? { color: '#FFFFFF' } : undefined}
             >
               {option.label}
             </span>
@@ -743,14 +730,11 @@ const styles = {
   search: 'flex h-11 flex-row items-center gap-2 rounded-3xl bg-card px-3.5',
   searchInput:
     'h-full min-w-0 flex-1 bg-transparent text-base text-ink outline-none placeholder:text-ink-tertiary',
-  segmented: 'relative flex flex-row gap-1 rounded-full bg-pill-gray p-1',
+  segmented: 'flex flex-row gap-1 rounded-full bg-pill-gray p-1',
   segment:
-    'relative flex h-9 flex-1 cursor-pointer items-center justify-center rounded-full',
-  segmentIndicator:
-    'pointer-events-none absolute inset-y-1 left-1 rounded-full bg-black transition-transform duration-300 ease-out motion-reduce:transition-none',
-  segmentLabel:
-    'text-sm font-semibold text-ink transition-colors duration-300 motion-reduce:transition-none',
-  segmentLabelActive: 'text-white',
+    'flex h-9 flex-1 cursor-pointer items-center justify-center rounded-full',
+  segmentActive: 'bg-black',
+  segmentLabel: 'text-sm font-semibold text-ink',
   center: 'flex flex-1 items-center justify-center p-10',
   empty: 'flex flex-col items-center py-10 px-6',
   emptyIcon:
