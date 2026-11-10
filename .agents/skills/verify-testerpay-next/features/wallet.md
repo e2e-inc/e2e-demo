@@ -9,7 +9,9 @@ of the balance.
   `funding-row-<last4>`, `link-new-source`): link, set default, remove.
 - Link on `/wallet/link` (`link-account-number`, `link-submit`): a bank by
   institution and account number, or a debit card by issuer and number.
-- Add money on `/wallet/add-money` (`add-money-submit`) from a linked bank.
+- Add money on `/wallet/add-money`: an amount, the funding picker
+  (`funding-picker`, any linked bank or card, `funding-option-link` to
+  link one), and `add-money-submit`.
 - Transfer on `/wallet/transfer`: `speed-standard` (free, 1-3 days) or
   `speed-instant` (1.75%, min $0.25, max $25, debit card only), then
   `transfer-submit` (reads `Transfer $X.XX`).
@@ -54,5 +56,6 @@ wallet-input|web|fuzzer|Signed in as the member, starting at /wallet/link, link 
   only` before an amount is entered (the fee slot is empty) and never
   states the $25 maximum (`app/wallet/transfer/page.tsx`). Both are the
   original app's copy, not new bugs; the fee itself applies the maximum.
-- Add money pulls from the default funding source; with none linked there
-  is nothing to add from, so link a bank first.
+- Add money preselects the default funding source (or the first one
+  linked); the picker can switch to any other linked source. With none
+  linked the submit stays disabled until one is linked.

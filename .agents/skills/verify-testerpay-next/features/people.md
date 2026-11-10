@@ -40,7 +40,7 @@ Signed in, with `--session member`:
 
 ```
 people-friends|web|skeptic|Signed in as the member, starting at /people, search for each demo person, add Priya Patel and Leo Alvarez as friends, unfriend one from her profile page, reloading /people after each; report friend state that is stale or inconsistent between the list and the profile
-profile-input|web|fuzzer|Signed in as the member, starting at /settings/edit-profile, save the name empty, with 300 characters, unicode and emoji, and leading spaces, and the bio with 2,000 characters and line breaks; report validation that is missing or a saved value that differs from what was typed
+profile-input|web|fuzzer|Signed in as the member, starting at /settings/edit-profile, save the name empty, with 300 characters, unicode and emoji, and leading spaces, and the bio with 79, 80, and 81 characters and pasted line breaks (the field is one line, capped at 80); report validation that is missing or a saved value that differs from what was typed
 ```
 
 ## Gotchas

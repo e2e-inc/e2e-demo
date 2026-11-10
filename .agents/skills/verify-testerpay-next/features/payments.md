@@ -8,10 +8,12 @@ emoji, and a visibility, then see it in Activity.
 - Pick a person on `/pay` (`pay-search`), or from the home `Pay or
   request` button or a person's page.
 - Amount on the keypad (`keypad`, `key-<digit>`, `amount-display`), a note
-  (`pay-note`) with emoji buttons below it, a visibility, the funding
+  (`pay-note`) with emoji buttons below it, and a visibility, shared by
+  both modes. Then `Pay` (`submit-pay`) or `Request` (`submit-request`).
+- Pay mode only (`/pay/[userId]`, or after choosing `Pay`): the funding
   picker (`funding-picker`, `funding-option-balance`,
-  `funding-option-<last4>`), then `Pay` (`submit-pay`) or `Request`
-  (`submit-request`).
+  `funding-option-<last4>`, `funding-option-link`). Request mode
+  (`?mode=request`) has no picker.
 - A confirmation sheet (`confirm-sheet`, `confirm-submit`) before money
   moves; then `/pay/success` (`success-title`, `success-details`,
   `success-done`).

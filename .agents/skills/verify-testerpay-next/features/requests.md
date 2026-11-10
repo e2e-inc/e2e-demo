@@ -36,7 +36,7 @@ Chen.
 
 `request-status` reads the new state; a paid request moves the balance
 (`$10.00` to `$4.00` for Movie snacks) and shows in Activity; a split's
-success says `the $12.00 bill was split 2 ways`, and each other
+success title reads `Split $12.00 2 ways`, and each other
 participant's share is a pending request on `/activity?tab=requests` (the
 member's own share creates no request).
 
