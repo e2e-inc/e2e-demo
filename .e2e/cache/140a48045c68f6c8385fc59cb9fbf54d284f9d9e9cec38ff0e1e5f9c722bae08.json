@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:35.548Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Link a bank or card\"",
+        "target": {
+          "role": "button",
+          "name": "Link a bank or card",
+          "testId": "link-new-source"
+        }
+      },
+      {
+        "name": "type",
+        "summary": "type \"11111111\" into textbox \"Account number\"",
+        "target": {
+          "role": "textbox",
+          "name": "Account number",
+          "testId": "link-account-number",
+          "placeholder": "000123456789"
+        },
+        "value": "11111111"
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Link bank account\"",
+        "target": {
+          "role": "button",
+          "name": "Link bank account",
+          "testId": "link-submit"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/wallet.e2e.ts::wallet::changes%20the%20default%20funding%20source%20and%20removes%20the%20old%20one",
+      "targetId": "web",
+      "instructionDigest": "0d628b6da76fc021b627718085e2a3bce34c270bc32ebfbe025bc91c401aec86",
+      "paramsDigest": "5e6a60b8647f9bdfb5409023d4b509cddb28138e599924d7cf46af1b7047a9d1",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Linked a Northwind Bank checking account using account number 11111111. The funding sources page shows it as the default, ending in 1111.",
+    "startPath": "/wallet/funding-sources",
+    "endPath": "/wallet/funding-sources",
+    "endAnchors": [
+      {
+        "text": "Northwind Bank Checking ••1111"
+      },
+      {
+        "text": "Bank account · Default"
+      },
+      {
+        "role": "button",
+        "name": "Remove Northwind Bank Checking ••1111"
+      },
+      {
+        "testId": "funding-list"
+      },
+      {
+        "testId": "funding-row-1111"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "Nothing linked yet"
+      },
+      {
+        "text": "Link a bank account or debit card to move money in and out."
+      }
+    ],
+    "endWaitMs": 11381,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

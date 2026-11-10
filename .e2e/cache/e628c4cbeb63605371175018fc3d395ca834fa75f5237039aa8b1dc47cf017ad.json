@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:19.854Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "type",
+        "summary": "type \"PPZ-M-NOPE\" into textbox \"Enter a code or @handle\"",
+        "target": {
+          "role": "textbox",
+          "name": "Enter a code or @handle",
+          "testId": "qr-manual-input",
+          "placeholder": "PPZ-M-BLOOM or @ava-chen"
+        },
+        "value": "PPZ-M-NOPE"
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Continue\"",
+        "target": {
+          "role": "button",
+          "name": "Continue",
+          "testId": "qr-manual-submit"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/merchants.e2e.ts::pay%20a%20business::rejects%20an%20unknown%20store%20code",
+      "targetId": "web",
+      "instructionDigest": "1f94b8a8f33101f136ee30c39d46084f587ccdeb4eeef915996b9b6bd3ce6f4d",
+      "paramsDigest": "62a55fe97ffa2b081d0733afd7ccaf86c28f715d6595a4194353a9fb64cf5170",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Entered PPZ-M-NOPE and continued. The app responded with the alert: “We don't recognize that code.”",
+    "startPath": "/qr?tab=scan",
+    "endPath": "/qr?tab=scan",
+    "endAnchors": [
+      {
+        "role": "alert",
+        "name": "We don't recognize that code."
+      },
+      {
+        "role": "textbox",
+        "name": "Enter a code or @handle",
+        "testId": "qr-manual-input",
+        "placeholder": "PPZ-M-BLOOM or @ava-chen",
+        "value": "PPZ-M-NOPE"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "textbox",
+        "name": "Enter a code or @handle",
+        "testId": "qr-manual-input",
+        "placeholder": "PPZ-M-BLOOM or @ava-chen"
+      }
+    ],
+    "endWaitMs": 11252,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

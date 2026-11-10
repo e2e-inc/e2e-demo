@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:18:30.167Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Edit profile\"",
+        "target": {
+          "role": "button",
+          "name": "Edit profile",
+          "testId": "profile-edit"
+        }
+      },
+      {
+        "name": "type",
+        "summary": "type \"Edie Tester\" into textbox \"Display name\"",
+        "target": {
+          "role": "textbox",
+          "name": "Display name",
+          "testId": "edit-profile-name"
+        },
+        "value": "Edie Tester"
+      },
+      {
+        "name": "type",
+        "summary": "type \"Testing all the flows\" into textbox \"Bio\"",
+        "target": {
+          "role": "textbox",
+          "name": "Bio",
+          "testId": "edit-profile-bio",
+          "placeholder": "Something short and sweet"
+        },
+        "value": "Testing all the flows"
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Save\"",
+        "target": {
+          "role": "button",
+          "name": "Save",
+          "testId": "edit-profile-save"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/social.e2e.ts::people%20and%20profile::edits%20the%20display%20name%20and%20bio",
+      "targetId": "web",
+      "instructionDigest": "5cb7ec4b5bb5a9d9bb214b803c736588991e4c36f01c79affbbe2216524e2325",
+      "paramsDigest": "c33a68e952c8921ff018e8a7cb5c85798846a71efebefe531093175032ed79c2",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Updated the profile display name to Edie Tester and bio to “Testing all the flows,” then saved. The profile now visibly shows both updated values.",
+    "startPath": "/profile",
+    "endPath": "/profile",
+    "endAnchors": [
+      {
+        "text": "ET"
+      },
+      {
+        "text": "Edie Tester"
+      },
+      {
+        "text": "Testing all the flows"
+      },
+      {
+        "role": "image",
+        "name": "Edie Tester"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "EM"
+      },
+      {
+        "text": "E2E Member"
+      },
+      {
+        "role": "image",
+        "name": "E2E Member"
+      }
+    ],
+    "endWaitMs": 11449,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

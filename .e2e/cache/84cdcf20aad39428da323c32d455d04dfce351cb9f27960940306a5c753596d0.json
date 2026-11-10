@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:18:45.336Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Apply in 60 seconds\"",
+        "target": {
+          "role": "button",
+          "name": "Apply in 60 seconds",
+          "testId": "apply-credit-card"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/cards.e2e.ts::cards::verifies%20identity%20and%20is%20approved%20for%20the%20credit%20card",
+      "targetId": "web",
+      "instructionDigest": "6ee7379e27edfeb982dcedb3e3500093bacab3062b624d213ab3ce4b2d96578a",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Started the credit card application and reached the Verify identity screen. Stopped there without submitting identity details.",
+    "startPath": "/cards",
+    "endPath": "/settings/verify?next=credit",
+    "endAnchors": [
+      {
+        "role": "button",
+        "name": "Back"
+      },
+      {
+        "role": "heading",
+        "name": "Verify identity"
+      },
+      {
+        "role": "heading",
+        "name": "Confirm it's you"
+      },
+      {
+        "text": "Financial rules require us to verify who you are before you can get a card or move larger amounts."
+      },
+      {
+        "text": "Demo mode: any realistic-looking values are accepted instantly. Nothing is checked against real records."
+      },
+      {
+        "text": "Legal name"
+      },
+      {
+        "role": "textbox",
+        "name": "Legal name",
+        "testId": "verify-name",
+        "placeholder": "Jordan A. Lee",
+        "value": "E2E Member"
+      },
+      {
+        "text": "Date of birth (YYYY-MM-DD)"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "heading",
+        "name": "Cards"
+      },
+      {
+        "text": "Spend your balance anywhere, in-store or online."
+      },
+      {
+        "text": "Debit"
+      },
+      {
+        "text": "TesterPay Debit Card"
+      },
+      {
+        "text": "Spend your balance anywhere. No fees, no credit check, instant virtual card."
+      },
+      {
+        "text": "Get the debit card"
+      },
+      {
+        "text": "Credit"
+      },
+      {
+        "text": "TesterPay Credit Card"
+      }
+    ],
+    "endWaitMs": 11498,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

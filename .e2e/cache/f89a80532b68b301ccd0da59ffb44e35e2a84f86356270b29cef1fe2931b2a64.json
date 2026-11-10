@@ -1,0 +1,103 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:15.483Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"View details\"",
+        "target": {
+          "role": "button",
+          "name": "View details",
+          "testId": "success-details"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/core-flows.e2e.ts::pays%20a%20person%20and%20records%20the%20payment",
+      "targetId": "web",
+      "instructionDigest": "f879436a8fc6b3a143293542a6635018d6b6f4cbac4b72d2231b6600ccff7a33",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Opened payment details for Ava Chen. The details show a completed $3.00 payment with note “E2E coffee,” funded from the TesterPay balance; reference 8590DA0B.",
+    "startPath": "/pay/success?kind=pay&amount=300&name=Ava+Chen&color=%239969FA&id=8590da0b-5a80-4454-b048-456e741a636c",
+    "endPath": "/activity/8590da0b-5a80-4454-b048-456e741a636c",
+    "endAnchors": [
+      {
+        "role": "button",
+        "name": "Back"
+      },
+      {
+        "role": "heading",
+        "name": "Details"
+      },
+      {
+        "text": "- $3.00",
+        "testId": "detail-amount"
+      },
+      {
+        "text": "E2E coffee"
+      },
+      {
+        "text": "Pay again"
+      },
+      {
+        "text": "Split"
+      },
+      {
+        "text": "Profile"
+      },
+      {
+        "text": "Status"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "$3.00"
+      },
+      {
+        "text": "Ava Chen has the money. That was easy."
+      },
+      {
+        "text": "View details"
+      },
+      {
+        "text": "Done"
+      },
+      {
+        "testId": "success-screen"
+      },
+      {
+        "role": "button",
+        "name": "View details",
+        "testId": "success-details"
+      },
+      {
+        "role": "button",
+        "name": "Done",
+        "testId": "success-done"
+      }
+    ],
+    "endWaitMs": 12841,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

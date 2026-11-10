@@ -1,0 +1,112 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:14.462Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"3\"",
+        "target": {
+          "role": "button",
+          "name": "3",
+          "testId": "key-3"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Pay $3.00\"",
+        "target": {
+          "role": "button",
+          "name": "Pay $3.00",
+          "testId": "merchant-pay-submit"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/merchants.e2e.ts::pay%20a%20business::pays%20a%20business%20by%20entering%20its%20store%20code",
+      "targetId": "web",
+      "instructionDigest": "a615ee3852683e909189d63511938f10b03336b5e1385fbc7a80aaf48f9f4302",
+      "paramsDigest": "4832d1b8877d545d88ff858cc1cbc2201aac963c9ba3cc813f5d31357b7881e8",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Paid $3.00 to La Esquina Taqueria using the TesterPay balance. The success screen confirms “You paid La Esquina Taqueria.”",
+    "startPath": "/merchants/m_taqueria",
+    "endPath": "/pay/success?kind=merchant&amount=300&name=La+Esquina+Taqueria&color=%23FCBA1E&id=4d21b396-a7ed-44f6-a9ff-d44bf3f8b449&body=Show+this+screen+to+the+cashier.+You%E2%80%99re+all+set.",
+    "endAnchors": [
+      {
+        "text": "LE"
+      },
+      {
+        "text": "$3.00"
+      },
+      {
+        "text": "You paid La Esquina Taqueria",
+        "testId": "success-title"
+      },
+      {
+        "text": "Show this screen to the cashier. You’re all set."
+      },
+      {
+        "text": "View details"
+      },
+      {
+        "text": "Done"
+      },
+      {
+        "testId": "success-screen"
+      },
+      {
+        "role": "image",
+        "name": "La Esquina Taqueria"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "button",
+        "name": "Back"
+      },
+      {
+        "role": "heading",
+        "name": "La Esquina Taqueria"
+      },
+      {
+        "text": "🌮"
+      },
+      {
+        "text": "La Esquina Taqueria"
+      },
+      {
+        "text": "Street tacos, all day"
+      },
+      {
+        "text": "Store code PPZ-M-TAQ"
+      },
+      {
+        "text": "Pay in store"
+      },
+      {
+        "text": "Online checkout"
+      }
+    ],
+    "endWaitMs": 11497,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

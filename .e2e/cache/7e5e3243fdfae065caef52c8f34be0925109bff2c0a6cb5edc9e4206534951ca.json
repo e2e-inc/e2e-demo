@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:35.046Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Marcus Reed You requested Marcus Reed E…\"",
+        "target": {
+          "role": "button",
+          "name": "Marcus Reed You requested Marcus Reed E2E tickets · Just now $4.00 Pending",
+          "testId": "request-row-026768e9-c2c9-4dee-ba6c-1e576080bc78"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/core-flows.e2e.ts::requests%20money%20and%20can%20cancel%20the%20request",
+      "targetId": "web",
+      "instructionDigest": "dd8e699d58471cdeccc96f3d0459d56ad7c04391f6c67abf5d191073517b1303",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Opened the E2E tickets request. Its detail page shows Marcus Reed, $4.00, note “E2E tickets,” and Pending status.",
+    "startPath": "/activity?tab=requests",
+    "endPath": "/requests/026768e9-c2c9-4dee-ba6c-1e576080bc78",
+    "endAnchors": [
+      {
+        "role": "button",
+        "name": "Back"
+      },
+      {
+        "role": "heading",
+        "name": "Request"
+      },
+      {
+        "text": "E2E tickets"
+      },
+      {
+        "text": "Cancel request"
+      },
+      {
+        "testId": "request-detail"
+      },
+      {
+        "role": "button",
+        "name": "Cancel request",
+        "testId": "request-cancel"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "heading",
+        "name": "Activity"
+      },
+      {
+        "text": "History"
+      },
+      {
+        "text": "Requests (2)"
+      },
+      {
+        "text": "For you"
+      },
+      {
+        "text": "AC"
+      },
+      {
+        "text": "Ava Chen requested"
+      },
+      {
+        "text": "$12.50"
+      },
+      {
+        "text": "Marcus Reed requested"
+      }
+    ],
+    "endWaitMs": 11471,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

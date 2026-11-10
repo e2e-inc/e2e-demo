@@ -1,0 +1,139 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:18:45.338Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "type",
+        "summary": "type \"1990-08-21\" into textbox \"Date of birth (YYYY-MM-DD)\"",
+        "target": {
+          "role": "textbox",
+          "name": "Date of birth (YYYY-MM-DD)",
+          "testId": "verify-dob",
+          "placeholder": "1995-04-12"
+        },
+        "value": "1990-08-21"
+      },
+      {
+        "name": "type",
+        "summary": "type \"5678\" into textbox \"Last 4 of SSN\"",
+        "target": {
+          "role": "textbox",
+          "name": "Last 4 of SSN",
+          "testId": "verify-ssn",
+          "placeholder": "1234"
+        },
+        "value": "5678"
+      },
+      {
+        "name": "type",
+        "summary": "type \"42 Elm Street\" into textbox \"Street address\"",
+        "target": {
+          "role": "textbox",
+          "name": "Street address",
+          "testId": "verify-address",
+          "placeholder": "1 Main St, Springfield"
+        },
+        "value": "42 Elm Street"
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Verify\"",
+        "target": {
+          "role": "button",
+          "name": "Verify",
+          "testId": "verify-submit"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/cards.e2e.ts::cards::verifies%20identity%20and%20is%20approved%20for%20the%20credit%20card",
+      "targetId": "web",
+      "instructionDigest": "36c4178a827e8237abc97abb02224e29a758c3825a09e05291f3cce12136da55",
+      "paramsDigest": "fb86e4f1b8c6f36d544b009ac2ee9f8267e7d9a79226238ba02ea647a15ccc0f",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Submitted the provided identity details and reached the “You're verified” screen. Stopped before continuing to the card application.",
+    "startPath": "/settings/verify?next=credit",
+    "endPath": "/settings/verify?next=credit",
+    "endAnchors": [
+      {
+        "role": "heading",
+        "name": "Identity"
+      },
+      {
+        "role": "heading",
+        "name": "You're verified"
+      },
+      {
+        "text": "Cards, bank transfers, and higher limits are unlocked."
+      },
+      {
+        "text": "Continue to card"
+      },
+      {
+        "testId": "verify-success"
+      },
+      {
+        "role": "button",
+        "name": "Continue to card",
+        "testId": "verify-done"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "heading",
+        "name": "Verify identity"
+      },
+      {
+        "role": "heading",
+        "name": "Confirm it's you"
+      },
+      {
+        "text": "Financial rules require us to verify who you are before you can get a card or move larger amounts."
+      },
+      {
+        "text": "Demo mode: any realistic-looking values are accepted instantly. Nothing is checked against real records."
+      },
+      {
+        "text": "Legal name"
+      },
+      {
+        "role": "textbox",
+        "name": "Legal name",
+        "testId": "verify-name",
+        "placeholder": "Jordan A. Lee",
+        "value": "E2E Member"
+      },
+      {
+        "text": "Date of birth (YYYY-MM-DD)"
+      },
+      {
+        "role": "textbox",
+        "name": "Date of birth (YYYY-MM-DD)",
+        "testId": "verify-dob",
+        "placeholder": "1995-04-12"
+      }
+    ],
+    "endWaitMs": 11335,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

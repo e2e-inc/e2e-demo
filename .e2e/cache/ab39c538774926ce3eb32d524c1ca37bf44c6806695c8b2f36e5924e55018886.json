@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:18:45.339Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Continue to card\"",
+        "target": {
+          "role": "button",
+          "name": "Continue to card",
+          "testId": "verify-done"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/cards.e2e.ts::cards::verifies%20identity%20and%20is%20approved%20for%20the%20credit%20card",
+      "targetId": "web",
+      "instructionDigest": "b709fdc54d9c638b21274eaae0ce6f2249f10347491c42feb431f308b6d5da62",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Continued from the verified identity screen to the credit card application. The “Apply for credit” screen is visible with a $3,000 pre-approved limit; the cardholder terms checkbox remains unchecked and I stopped before agreeing.",
+    "startPath": "/settings/verify?next=credit",
+    "endPath": "/cards/new?type=credit",
+    "endAnchors": [
+      {
+        "role": "heading",
+        "name": "Apply for credit"
+      },
+      {
+        "text": "testerpay"
+      },
+      {
+        "text": "CREDIT"
+      },
+      {
+        "text": "•••• •••• •••• ••••"
+      },
+      {
+        "text": "E2E MEMBER"
+      },
+      {
+        "text": "EXP"
+      },
+      {
+        "text": "12/30"
+      },
+      {
+        "role": "heading",
+        "name": "Instant decision, no hard pull"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "heading",
+        "name": "Identity"
+      },
+      {
+        "role": "heading",
+        "name": "You're verified"
+      },
+      {
+        "text": "Cards, bank transfers, and higher limits are unlocked."
+      },
+      {
+        "text": "Continue to card"
+      },
+      {
+        "testId": "verify-success"
+      },
+      {
+        "role": "button",
+        "name": "Continue to card",
+        "testId": "verify-done"
+      }
+    ],
+    "endWaitMs": 11440,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

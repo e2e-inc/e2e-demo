@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:21:44.813Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"View details\"",
+        "target": {
+          "role": "button",
+          "name": "View details",
+          "testId": "success-details"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/merchants.e2e.ts::pay%20a%20business::pays%20a%20business%20in%20store%20from%20the%20balance",
+      "targetId": "web",
+      "instructionDigest": "f879436a8fc6b3a143293542a6635018d6b6f4cbac4b72d2231b6600ccff7a33",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Opened the payment details. The detail screen shows the $4.50 Bloom Coffee Roasters payment as Completed, funded by TesterPay balance, with channel In store.",
+    "startPath": "/pay/success?kind=merchant&amount=450&name=Bloom+Coffee+Roasters&color=%23FB5E1B&id=b6a43703-7256-406c-ada0-69d161f20d6f&body=Show+this+screen+to+the+cashier.+You%E2%80%99re+all+set.",
+    "endPath": "/activity/b6a43703-7256-406c-ada0-69d161f20d6f",
+    "endAnchors": [
+      {
+        "role": "button",
+        "name": "Back"
+      },
+      {
+        "role": "heading",
+        "name": "Details"
+      },
+      {
+        "text": "☕️"
+      },
+      {
+        "text": "- $4.50",
+        "testId": "detail-amount"
+      },
+      {
+        "text": "Status"
+      },
+      {
+        "text": "Completed"
+      },
+      {
+        "text": "Date"
+      },
+      {
+        "text": "Type"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "BC"
+      },
+      {
+        "text": "$4.50"
+      },
+      {
+        "text": "Show this screen to the cashier. You’re all set."
+      },
+      {
+        "text": "View details"
+      },
+      {
+        "text": "Done"
+      },
+      {
+        "testId": "success-screen"
+      },
+      {
+        "role": "image",
+        "name": "Bloom Coffee Roasters"
+      },
+      {
+        "role": "button",
+        "name": "View details",
+        "testId": "success-details"
+      }
+    ],
+    "endWaitMs": 11324,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

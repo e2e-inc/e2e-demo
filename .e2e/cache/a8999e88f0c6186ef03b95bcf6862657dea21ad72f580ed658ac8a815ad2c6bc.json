@@ -1,0 +1,110 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:03.480Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Noodle Theory\"",
+        "target": {
+          "role": "button",
+          "name": "Noodle Theory",
+          "testId": "merchant-m_noodle"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap tab \"Online checkout\"",
+        "target": {
+          "role": "tab",
+          "name": "Online checkout"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/merchants.e2e.ts::pay%20a%20business::covers%20an%20online%20order%20the%20balance%20cannot%20afford%20with%20a%20bank",
+      "targetId": "web",
+      "instructionDigest": "1865a3d614142834cd1a142ff14ca0ecc418e54c6b7c93c329135e6e68ea1ccf",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Opened Noodle Theory and selected Online checkout. The online order is displayed with a $24.00 total, and the screen indicates the $10.00 TesterPay balance is insufficient.",
+    "startPath": "/merchants",
+    "endPath": "/merchants/m_noodle",
+    "endAnchors": [
+      {
+        "role": "heading",
+        "name": "Noodle Theory"
+      },
+      {
+        "text": "Hand-pulled noodles nightly"
+      },
+      {
+        "text": "Store code PPZ-M-NOODLE"
+      },
+      {
+        "text": "Pay in store"
+      },
+      {
+        "text": "Online checkout"
+      },
+      {
+        "text": "Your order"
+      },
+      {
+        "text": "House special"
+      },
+      {
+        "text": "$14.50"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "heading",
+        "name": "Pay a business"
+      },
+      {
+        "role": "heading",
+        "name": "Businesses near you"
+      },
+      {
+        "text": "Pay in-store by scanning their code, or check out online."
+      },
+      {
+        "text": "☕️"
+      },
+      {
+        "text": "Bloom Coffee Roasters"
+      },
+      {
+        "text": "Coffee"
+      },
+      {
+        "text": "🎵"
+      },
+      {
+        "text": "Groove Records"
+      }
+    ],
+    "endWaitMs": 11691,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

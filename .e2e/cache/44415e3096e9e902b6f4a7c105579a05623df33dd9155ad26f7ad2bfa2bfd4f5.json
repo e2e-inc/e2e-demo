@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:18:46.984Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "type",
+        "summary": "type \"Priya Patel\" into textbox \"Search by name or @handle\"",
+        "target": {
+          "role": "textbox",
+          "name": "Search by name or @handle",
+          "testId": "people-search",
+          "placeholder": "Search by name or @handle"
+        },
+        "value": "Priya Patel"
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/social.e2e.ts::people%20and%20profile::adds%20and%20removes%20a%20friend",
+      "targetId": "web",
+      "instructionDigest": "d2eac051e50b90212ba245cf39b2677699ae26709b9ef73c7726d5413e41d8f7",
+      "paramsDigest": "1ab46145796bb46692c51bd560e0b3afa33c24241d921becf14d2f41342ae14d",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Searched People for Priya Patel; the results show Priya Patel (@priya-patel) with an Add option.",
+    "startPath": "/people",
+    "endPath": "/people",
+    "endAnchors": [
+      {
+        "role": "textbox",
+        "name": "Search by name or @handle",
+        "testId": "people-search",
+        "placeholder": "Search by name or @handle",
+        "value": "Priya Patel"
+      },
+      {
+        "text": "Results"
+      },
+      {
+        "text": "PP"
+      },
+      {
+        "text": "Priya Patel"
+      },
+      {
+        "text": "@priya-patel"
+      },
+      {
+        "role": "button",
+        "name": "Priya Patel Priya Patel @priya-patel Add",
+        "testId": "person-priya-patel"
+      },
+      {
+        "role": "image",
+        "name": "Priya Patel"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "textbox",
+        "name": "Search by name or @handle",
+        "testId": "people-search",
+        "placeholder": "Search by name or @handle"
+      },
+      {
+        "text": "Friends (0)"
+      },
+      {
+        "text": "No friends yet"
+      },
+      {
+        "text": "Add a few people below to start paying and splitting."
+      },
+      {
+        "text": "People you may know"
+      },
+      {
+        "text": "AC"
+      },
+      {
+        "text": "Ava Chen"
+      },
+      {
+        "text": "@ava-chen"
+      }
+    ],
+    "endWaitMs": 11171,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:51.334Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap link \"Already have an account? Sign in\"",
+        "target": {
+          "role": "link",
+          "name": "Already have an account? Sign in",
+          "testId": "welcome-sign-in"
+        }
+      },
+      {
+        "name": "type",
+        "summary": "type \"e2e.member@example.test\" into textbox \"Email\"",
+        "target": {
+          "role": "textbox",
+          "name": "Email",
+          "testId": "sign-in-email",
+          "placeholder": "you@example.com"
+        },
+        "value": "e2e.member@example.test"
+      },
+      {
+        "name": "typeSecret",
+        "summary": "fill secret \"member.password\" into textbox \"Password\"",
+        "target": {
+          "role": "textbox",
+          "name": "Password",
+          "testId": "sign-in-password",
+          "placeholder": "Your password",
+          "inputPurpose": "password"
+        },
+        "secret": "member.password"
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Sign in\"",
+        "target": {
+          "role": "button",
+          "name": "Sign in",
+          "testId": "sign-in-submit"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/account.e2e.ts::resets%20the%20demo%20and%20removes%20the%20local%20account",
+      "targetId": "web",
+      "instructionDigest": "06e546b8dcc2ed8d1d2fe7bc520323254d7b915bfbab267cf89dc0849bc66ebd",
+      "paramsDigest": "c7cfa82879c2e5e3a4d7f96a22fb3d51e53cfdc18db051be25982ebfca97ca4e",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Submitted the sign-in form with the provided email and password. The app displayed “Email or password is incorrect. Accounts are local to this device,” confirming the reset account is no longer available.",
+    "startPath": "/welcome",
+    "endPath": "/sign-in",
+    "endAnchors": [
+      {
+        "role": "alert",
+        "name": "Email or password is incorrect. Accounts are local to this device."
+      },
+      {
+        "role": "button",
+        "name": "Back"
+      },
+      {
+        "role": "heading",
+        "name": "Sign in"
+      },
+      {
+        "role": "heading",
+        "name": "Welcome back"
+      },
+      {
+        "text": "Sign in with the email you used to create your account."
+      },
+      {
+        "text": "Email"
+      },
+      {
+        "role": "textbox",
+        "name": "Email",
+        "testId": "sign-in-email",
+        "placeholder": "you@example.com",
+        "value": "e2e.member@example.test"
+      },
+      {
+        "text": "Password"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "testerpay"
+      },
+      {
+        "role": "heading",
+        "name": "Pay friends. Split anything."
+      },
+      {
+        "text": "Send, request, and split money with the people you actually hang out with."
+      },
+      {
+        "text": "AC"
+      },
+      {
+        "text": "Ava Chen paid Marcus for Taco Tuesday 🌮"
+      },
+      {
+        "text": "PP"
+      },
+      {
+        "text": "Priya Patel split the cabin with 4 people 🏕️"
+      },
+      {
+        "text": "LA"
+      }
+    ],
+    "endWaitMs": 11876,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}
