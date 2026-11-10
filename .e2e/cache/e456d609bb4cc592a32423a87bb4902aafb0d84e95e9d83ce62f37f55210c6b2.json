@@ -1,0 +1,141 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:03.481Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Pay with: TesterPay balance · $10.00\"",
+        "target": {
+          "role": "button",
+          "name": "Pay with: TesterPay balance · $10.00",
+          "testId": "funding-picker"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Link a bank or card\"",
+        "target": {
+          "role": "button",
+          "name": "Link a bank or card",
+          "testId": "funding-option-link"
+        }
+      },
+      {
+        "name": "type",
+        "summary": "type \"000555554321\" into textbox \"Account number\"",
+        "target": {
+          "role": "textbox",
+          "name": "Account number",
+          "testId": "link-account-number",
+          "placeholder": "000123456789"
+        },
+        "value": "000555554321"
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Link bank account\"",
+        "target": {
+          "role": "button",
+          "name": "Link bank account",
+          "testId": "link-submit"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Pay with: TesterPay balance · $10.00\"",
+        "target": {
+          "role": "button",
+          "name": "Pay with: TesterPay balance · $10.00",
+          "testId": "funding-picker"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/merchants.e2e.ts::pay%20a%20business::covers%20an%20online%20order%20the%20balance%20cannot%20afford%20with%20a%20bank",
+      "targetId": "web",
+      "instructionDigest": "66993fede76af626c0b3e294890548054220dd1cc9ee166ad3e1c36cebf5105d",
+      "paramsDigest": "e40822332e10327f7bcc3f4150d81a842bfc05c72c160ed1d11c6491b3945da8",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Linked account 000555554321 to Northwind Bank. The Pay with options now lists “Northwind Bank Checking ••4321” alongside the TesterPay balance.",
+    "startPath": "/merchants/m_noodle",
+    "endPath": "/merchants/m_noodle",
+    "endAnchors": [
+      {
+        "text": "Enter the amount on the register"
+      },
+      {
+        "text": "$",
+        "testId": "amount-currency"
+      },
+      {
+        "text": "0",
+        "testId": "amount-display"
+      },
+      {
+        "text": "Northwind Bank Checking ••4321"
+      },
+      {
+        "text": "Link a bank or card"
+      },
+      {
+        "text": "."
+      },
+      {
+        "role": "button",
+        "name": "Delete",
+        "testId": "key-backspace"
+      },
+      {
+        "text": "Enter an amount"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "Your order"
+      },
+      {
+        "text": "House special"
+      },
+      {
+        "text": "$14.50"
+      },
+      {
+        "text": "Seasonal side"
+      },
+      {
+        "text": "$6.50"
+      },
+      {
+        "text": "Sparkling water"
+      },
+      {
+        "text": "$3.00"
+      },
+      {
+        "text": "Total"
+      }
+    ],
+    "endWaitMs": 11843,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

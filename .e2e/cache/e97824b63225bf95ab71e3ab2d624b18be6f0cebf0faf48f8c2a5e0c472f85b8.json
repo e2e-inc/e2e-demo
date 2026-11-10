@@ -1,0 +1,147 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:35.046Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap node \"Request\"",
+        "target": {
+          "text": "Request"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Marcus Reed Marcus Reed @marcus-reed\"",
+        "target": {
+          "role": "button",
+          "name": "Marcus Reed Marcus Reed @marcus-reed",
+          "testId": "person-marcus-reed"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"4\"",
+        "target": {
+          "role": "button",
+          "name": "4",
+          "testId": "key-4"
+        }
+      },
+      {
+        "name": "type",
+        "summary": "type \"E2E tickets\" into textbox \"Note\"",
+        "target": {
+          "role": "textbox",
+          "name": "Note",
+          "testId": "pay-note",
+          "placeholder": "What's it for?"
+        },
+        "value": "E2E tickets"
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Request\"",
+        "target": {
+          "role": "button",
+          "name": "Request",
+          "testId": "submit-request"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Send request\"",
+        "target": {
+          "role": "button",
+          "name": "Send request",
+          "testId": "confirm-submit"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/core-flows.e2e.ts::requests%20money%20and%20can%20cancel%20the%20request",
+      "targetId": "web",
+      "instructionDigest": "43a61b4a5419d4c8f7bdf4386bf3a32059ab6627616f45e1f4250b6b0aa28324",
+      "paramsDigest": "8950dd1627b56430ec171875fa1e5a8eb1887bcb426d978c48c55924dbdef728",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Requested $4.00 from Marcus Reed with the note “E2E tickets.” The success screen confirms “You requested $4.00”; request ID: 026768e9-c2c9-4dee-ba6c-1e576080bc78.",
+    "startPath": "/",
+    "endPath": "/pay/success?kind=request&amount=400&name=Marcus+Reed&color=%23FB5E1B&requestId=026768e9-c2c9-4dee-ba6c-1e576080bc78",
+    "endAnchors": [
+      {
+        "text": "$4.00"
+      },
+      {
+        "text": "You requested $4.00",
+        "testId": "success-title"
+      },
+      {
+        "text": "Marcus Reed will see your request right away."
+      },
+      {
+        "text": "Done"
+      },
+      {
+        "testId": "success-screen"
+      },
+      {
+        "role": "button",
+        "name": "Done",
+        "testId": "success-done"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "heading",
+        "name": "Welcome back, E2E"
+      },
+      {
+        "text": "Your money. Your people. All in one place."
+      },
+      {
+        "role": "button",
+        "name": "Find people",
+        "testId": "home-search"
+      },
+      {
+        "role": "button",
+        "name": "Show my code",
+        "testId": "home-qr"
+      },
+      {
+        "text": "TesterPay balance"
+      },
+      {
+        "text": "$10.00",
+        "testId": "balance-amount"
+      },
+      {
+        "text": "Add money"
+      },
+      {
+        "text": "Transfer"
+      }
+    ],
+    "endWaitMs": 12099,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:22.672Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Activate card\"",
+        "target": {
+          "role": "button",
+          "name": "Activate card",
+          "testId": "card-activate-physical"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/cards.e2e.ts::cards::manages%20debit%20card%20controls",
+      "targetId": "web",
+      "instructionDigest": "a2729d50517a9754d40fe61bf437ef118171e12342f1024261bacdb0afd9288e",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Activated the physical card. The card screen now shows “Physical card activated.”",
+    "startPath": "/cards/30ebf5f8-2b7e-4c7d-bed6-aa348a0c110d?fresh=1",
+    "endPath": "/cards/30ebf5f8-2b7e-4c7d-bed6-aa348a0c110d?fresh=1",
+    "endAnchors": [
+      {
+        "text": "Physical card activated"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "Your card is on the way"
+      },
+      {
+        "text": "Got it already? Activate it here."
+      },
+      {
+        "text": "Activate card"
+      },
+      {
+        "role": "button",
+        "name": "Activate card",
+        "testId": "card-activate-physical"
+      }
+    ],
+    "endWaitMs": 11517,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

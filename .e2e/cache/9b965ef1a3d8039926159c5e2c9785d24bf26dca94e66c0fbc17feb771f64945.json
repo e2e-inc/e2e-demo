@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:38.561Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "type",
+        "summary": "type \"E2E book club\" into textbox \"Note\"",
+        "target": {
+          "role": "textbox",
+          "name": "Note",
+          "placeholder": "What's it for? (optional)"
+        },
+        "value": "E2E book club"
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Create code\"",
+        "target": {
+          "role": "button",
+          "name": "Create code",
+          "testId": "qr-request-create"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/social.e2e.ts::people%20and%20profile::creates%20a%20QR%20code%20that%20requests%20a%20set%20amount",
+      "targetId": "web",
+      "instructionDigest": "f84a443a6cad536fe5506e1e8b99c39f9786aae26f3f3076b9a439f810f58924",
+      "paramsDigest": "53860be4027bea4cdef7b88f85f4b8b4d3e2641b3b4d9dab2ab90fd59d9b379f",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Entered the note “E2E book club” and created the request code. The confirmation screen shows $7.50, the note, and QR request code testerpay://qr/10afe7e6fcd3.",
+    "startPath": "/qr/request",
+    "endPath": "/qr/request",
+    "endAnchors": [
+      {
+        "role": "heading",
+        "name": "Request code"
+      },
+      {
+        "text": "$7.50"
+      },
+      {
+        "text": "E2E book club"
+      },
+      {
+        "text": "Done"
+      },
+      {
+        "testId": "qr-request-card"
+      },
+      {
+        "role": "button",
+        "name": "Done",
+        "testId": "qr-request-done"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "heading",
+        "name": "Request with a code"
+      },
+      {
+        "text": "$",
+        "testId": "amount-currency"
+      },
+      {
+        "text": "7.50",
+        "testId": "amount-display"
+      },
+      {
+        "role": "textbox",
+        "name": "Note",
+        "placeholder": "What's it for? (optional)"
+      },
+      {
+        "text": "."
+      },
+      {
+        "role": "button",
+        "name": "Delete",
+        "testId": "key-backspace"
+      },
+      {
+        "text": "Create code"
+      },
+      {
+        "name": "Amount 7.50"
+      }
+    ],
+    "endWaitMs": 11441,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

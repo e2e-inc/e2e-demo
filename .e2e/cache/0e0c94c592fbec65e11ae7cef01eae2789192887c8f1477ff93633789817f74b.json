@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:51.333Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Reset demo\"",
+        "target": {
+          "role": "button",
+          "name": "Reset demo",
+          "testId": "reset-demo"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/account.e2e.ts::resets%20the%20demo%20and%20removes%20the%20local%20account",
+      "targetId": "web",
+      "instructionDigest": "71e41e1bcf54263b5e4123761466cc89e0d342a03b9b63ece751672b49ff00bf",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Tapped Reset demo. The app returned to the welcome screen, indicating the demo reset completed.",
+    "startPath": "/settings",
+    "endPath": "/welcome",
+    "endAnchors": [
+      {
+        "text": "testerpay"
+      },
+      {
+        "role": "heading",
+        "name": "Pay friends. Split anything."
+      },
+      {
+        "text": "Send, request, and split money with the people you actually hang out with."
+      },
+      {
+        "text": "AC"
+      },
+      {
+        "text": "Ava Chen paid Marcus for Taco Tuesday 🌮"
+      },
+      {
+        "text": "PP"
+      },
+      {
+        "text": "Priya Patel split the cabin with 4 people 🏕️"
+      },
+      {
+        "text": "LA"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "link",
+        "name": "testerpay"
+      },
+      {
+        "text": "Home"
+      },
+      {
+        "text": "Cards"
+      },
+      {
+        "text": "Activity"
+      },
+      {
+        "text": "Friends"
+      },
+      {
+        "text": "Businesses"
+      },
+      {
+        "text": "Settings"
+      },
+      {
+        "text": "Pay or request"
+      }
+    ],
+    "endWaitMs": 11563,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

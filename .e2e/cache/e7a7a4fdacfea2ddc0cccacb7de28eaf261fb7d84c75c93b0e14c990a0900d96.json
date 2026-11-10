@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:11.634Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Transfer $4.00\"",
+        "target": {
+          "role": "button",
+          "name": "Transfer $4.00",
+          "testId": "transfer-submit"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/wallet.e2e.ts::wallet::sends%20an%20instant%20transfer%20to%20a%20debit%20card%20and%20pays%20the%20fee",
+      "targetId": "web",
+      "instructionDigest": "5927d144eb7216833d3c985ad34abec45503b727f5c03a8152c1f8b52ce23e0e",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Submitted the instant transfer. The confirmation says “Transfer sent instantly” and reports $4.00 sent to Atlas Card Debit ending in 4242 with a $0.25 fee.",
+    "startPath": "/wallet/transfer",
+    "endPath": "/pay/success?kind=transfer&amount=400&name=Atlas+Card&color=%234BB4FF&id=7f4ea186-315a-432f-b737-6c6c7ed38e17&title=Transfer+sent+instantly&body=%244.00+is+in+your+Atlas+Card+Debit+%E2%80%A2%E2%80%A24242.+Fee+%240.25.",
+    "endAnchors": [
+      {
+        "text": "AC"
+      },
+      {
+        "text": "$4.00"
+      },
+      {
+        "text": "Transfer sent instantly",
+        "testId": "success-title"
+      },
+      {
+        "text": "$4.00 is in your Atlas Card Debit ••4242. Fee $0.25."
+      },
+      {
+        "text": "View details"
+      },
+      {
+        "text": "Done"
+      },
+      {
+        "testId": "success-screen"
+      },
+      {
+        "role": "image",
+        "name": "Atlas Card"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "button",
+        "name": "Back"
+      },
+      {
+        "role": "heading",
+        "name": "Transfer to bank"
+      },
+      {
+        "text": "Available $10.00"
+      },
+      {
+        "text": "$",
+        "testId": "amount-currency"
+      },
+      {
+        "text": "4",
+        "testId": "amount-display"
+      },
+      {
+        "text": "Transfer all"
+      },
+      {
+        "text": "Instant"
+      },
+      {
+        "text": "1.75% fee (min $0.25) · $0.25 · debit card only"
+      }
+    ],
+    "endWaitMs": 11491,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

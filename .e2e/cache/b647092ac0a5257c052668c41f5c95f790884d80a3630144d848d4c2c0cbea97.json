@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:11.635Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Done\"",
+        "target": {
+          "role": "button",
+          "name": "Done",
+          "testId": "success-done"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/wallet.e2e.ts::wallet::sends%20an%20instant%20transfer%20to%20a%20debit%20card%20and%20pays%20the%20fee",
+      "targetId": "web",
+      "instructionDigest": "dcb32a9a0c82a4202fc9b66e98141862403fff63c3713183881e04f25ff14603",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Tapped Done on the instant-transfer success screen and returned to the home dashboard. The dashboard is visible with a $5.75 TesterPay balance.",
+    "startPath": "/pay/success?kind=transfer&amount=400&name=Atlas+Card&color=%234BB4FF&id=7f4ea186-315a-432f-b737-6c6c7ed38e17&title=Transfer+sent+instantly&body=%244.00+is+in+your+Atlas+Card+Debit+%E2%80%A2%E2%80%A24242.+Fee+%240.25.",
+    "endPath": "/",
+    "endAnchors": [
+      {
+        "role": "heading",
+        "name": "Welcome back, E2E"
+      },
+      {
+        "text": "Your money. Your people. All in one place."
+      },
+      {
+        "role": "button",
+        "name": "Find people",
+        "testId": "home-search"
+      },
+      {
+        "role": "button",
+        "name": "Show my code",
+        "testId": "home-qr"
+      },
+      {
+        "text": "TesterPay balance"
+      },
+      {
+        "text": "$5.75",
+        "testId": "balance-amount"
+      },
+      {
+        "text": "Add money"
+      },
+      {
+        "text": "Transfer"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "$4.00"
+      },
+      {
+        "text": "Transfer sent instantly",
+        "testId": "success-title"
+      },
+      {
+        "text": "$4.00 is in your Atlas Card Debit ••4242. Fee $0.25."
+      },
+      {
+        "text": "View details"
+      },
+      {
+        "text": "Done"
+      },
+      {
+        "testId": "success-screen"
+      },
+      {
+        "role": "image",
+        "name": "Atlas Card"
+      },
+      {
+        "role": "button",
+        "name": "View details",
+        "testId": "success-details"
+      }
+    ],
+    "endWaitMs": 12175,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:37.732Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Create account\"",
+        "target": {
+          "role": "button",
+          "name": "Create account",
+          "testId": "welcome-sign-up"
+        }
+      },
+      {
+        "name": "type",
+        "summary": "type \"Nova Quinn\" into textbox \"Full name\"",
+        "target": {
+          "role": "textbox",
+          "name": "Full name",
+          "testId": "sign-up-name",
+          "placeholder": "Jordan Lee"
+        },
+        "value": "Nova Quinn"
+      },
+      {
+        "name": "type",
+        "summary": "type \"e2e.newcomer@example.test\" into textbox \"Email\"",
+        "target": {
+          "role": "textbox",
+          "name": "Email",
+          "testId": "sign-up-email",
+          "placeholder": "you@example.com"
+        },
+        "value": "e2e.newcomer@example.test"
+      },
+      {
+        "name": "typeSecret",
+        "summary": "fill secret \"newcomer.password\" into textbox \"Password\"",
+        "target": {
+          "role": "textbox",
+          "name": "Password",
+          "testId": "sign-up-password",
+          "placeholder": "At least 8 characters",
+          "inputPurpose": "password"
+        },
+        "secret": "newcomer.password"
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Continue\"",
+        "target": {
+          "role": "button",
+          "name": "Continue",
+          "testId": "sign-up-submit"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/account.e2e.ts::signs%20up%20a%20new%20member%20with%20a%20custom%20handle",
+      "targetId": "web",
+      "instructionDigest": "b5139810d894ac82aa50d8c18ffa13d9516155a08273eac5d4a0b53905f6b888",
+      "paramsDigest": "80afb9197996abca5dad069be25305b84e95c4393d74f53e17f97b16add090ae",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Created the account for Nova Quinn with the provided email and password. The app is stopped on the Pick your handle screen with the default handle @nova-quinn shown as available.",
+    "startPath": "/welcome",
+    "endPath": "/onboarding/handle",
+    "endAnchors": [
+      {
+        "role": "heading",
+        "name": "Your profile"
+      },
+      {
+        "role": "button",
+        "name": "Sign out"
+      },
+      {
+        "text": "NQ"
+      },
+      {
+        "role": "heading",
+        "name": "Pick your handle"
+      },
+      {
+        "text": "Friends pay you with it, so make it easy to remember."
+      },
+      {
+        "text": "Display name"
+      },
+      {
+        "role": "textbox",
+        "name": "Display name",
+        "testId": "handle-display-name",
+        "placeholder": "Jordan Lee",
+        "value": "Nova Quinn"
+      },
+      {
+        "text": "Handle"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "testerpay"
+      },
+      {
+        "role": "heading",
+        "name": "Pay friends. Split anything."
+      },
+      {
+        "text": "Send, request, and split money with the people you actually hang out with."
+      },
+      {
+        "text": "AC"
+      },
+      {
+        "text": "Ava Chen paid Marcus for Taco Tuesday 🌮"
+      },
+      {
+        "text": "PP"
+      },
+      {
+        "text": "Priya Patel split the cabin with 4 people 🏕️"
+      },
+      {
+        "text": "LA"
+      }
+    ],
+    "endWaitMs": 13217,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

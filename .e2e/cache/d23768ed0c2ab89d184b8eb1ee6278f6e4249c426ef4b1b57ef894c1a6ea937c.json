@@ -1,0 +1,165 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:07.902Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Pay or request\"",
+        "target": {
+          "role": "button",
+          "name": "Pay or request"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Marcus Reed Marcus Reed @marcus-reed\"",
+        "target": {
+          "role": "button",
+          "name": "Marcus Reed Marcus Reed @marcus-reed",
+          "testId": "person-marcus-reed"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"2\"",
+        "target": {
+          "role": "button",
+          "name": "2",
+          "testId": "key-2"
+        }
+      },
+      {
+        "name": "type",
+        "summary": "type \"E2E pizza\" into textbox \"Note\"",
+        "target": {
+          "role": "textbox",
+          "name": "Note",
+          "testId": "pay-note",
+          "placeholder": "What's it for?"
+        },
+        "value": "E2E pizza"
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Emoji 🍕\"",
+        "target": {
+          "role": "button",
+          "name": "Emoji 🍕"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Private\"",
+        "target": {
+          "role": "button",
+          "name": "Private"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Pay\"",
+        "target": {
+          "role": "button",
+          "name": "Pay",
+          "testId": "submit-pay"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/social.e2e.ts::people%20and%20profile::pays%20privately%20with%20a%20note%20and%20emoji",
+      "targetId": "web",
+      "instructionDigest": "a55b683f530e3b944cec60694db49dd1264236c99b2e878fbccca63083c007a7",
+      "paramsDigest": "7a439d7a862296bacdd6783bb444354498498bbda4364c213a538c4e0dc8d277",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Prepared a $2.00 payment to Marcus Reed from the TesterPay balance with note “E2E pizza,” selected 🍕 and Private visibility, and opened the confirmation showing those details. The payment remains unconfirmed.",
+    "startPath": "/",
+    "endPath": "/pay/demo_marcus?mode=pay&handle=marcus-reed&name=Marcus+Reed&color=%23FB5E1B",
+    "endAnchors": [
+      {
+        "role": "button",
+        "name": "Back"
+      },
+      {
+        "text": "Marcus Reed"
+      },
+      {
+        "text": "@marcus-reed"
+      },
+      {
+        "text": "$",
+        "testId": "amount-currency"
+      },
+      {
+        "text": "2",
+        "testId": "amount-display"
+      },
+      {
+        "role": "textbox",
+        "name": "Note",
+        "testId": "pay-note",
+        "placeholder": "What's it for?",
+        "value": "E2E pizza"
+      },
+      {
+        "text": "🍕"
+      },
+      {
+        "text": "☕️"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "heading",
+        "name": "Welcome back, E2E"
+      },
+      {
+        "text": "Your money. Your people. All in one place."
+      },
+      {
+        "role": "button",
+        "name": "Find people",
+        "testId": "home-search"
+      },
+      {
+        "role": "button",
+        "name": "Show my code",
+        "testId": "home-qr"
+      },
+      {
+        "text": "TesterPay balance"
+      },
+      {
+        "text": "$10.00",
+        "testId": "balance-amount"
+      },
+      {
+        "text": "Add money"
+      },
+      {
+        "text": "Transfer"
+      }
+    ],
+    "endWaitMs": 11482,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

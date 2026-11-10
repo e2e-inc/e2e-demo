@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:35.047Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Cancel request\"",
+        "target": {
+          "role": "button",
+          "name": "Cancel request",
+          "testId": "request-cancel"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/core-flows.e2e.ts::requests%20money%20and%20can%20cancel%20the%20request",
+      "targetId": "web",
+      "instructionDigest": "da92fb5f36bfc122fc99f90126a477c21ccff919e81b22057502b63922281a92",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Cancelled the $4.00 request to Marcus Reed for “E2E tickets.” The request detail now shows Cancelled, and the Cancel request button is gone.",
+    "startPath": "/requests/026768e9-c2c9-4dee-ba6c-1e576080bc78",
+    "endPath": "/requests/026768e9-c2c9-4dee-ba6c-1e576080bc78",
+    "endAnchors": [
+      {
+        "text": "Cancelled",
+        "testId": "request-status"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "Pending",
+        "testId": "request-status"
+      },
+      {
+        "text": "Cancel request"
+      },
+      {
+        "role": "button",
+        "name": "Cancel request",
+        "testId": "request-cancel"
+      }
+    ],
+    "endWaitMs": 11471,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

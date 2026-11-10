@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:18:51.994Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"$20\"",
+        "target": {
+          "role": "button",
+          "name": "$20"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Add $20.00\"",
+        "target": {
+          "role": "button",
+          "name": "Add $20.00",
+          "testId": "add-money-submit"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/core-flows.e2e.ts::links%20a%20bank%20and%20adds%20money",
+      "targetId": "web",
+      "instructionDigest": "4ba6296a62010b21a08352efe84b4b5de3eb15ab55b8e168975dd186fbb49f6d",
+      "paramsDigest": "824cc0ef0a073d892740ac2cbd146c78cd5130465b2bcfd28e2cc6fbe6ce50af",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Added $20.00 from the linked Northwind Bank Checking account ending in 6789. The success screen confirms the new balance is $30.00.",
+    "startPath": "/wallet/add-money",
+    "endPath": "/pay/success?kind=add&amount=2000&name=Northwind+Bank&color=%234BB4FF&id=4ea734af-f0b1-4e24-8ccd-7d57ed7f11bf&title=Added+%2420.00&body=Your+new+balance+is+%2430.00.",
+    "endAnchors": [
+      {
+        "text": "NB"
+      },
+      {
+        "text": "$20.00"
+      },
+      {
+        "text": "Added $20.00",
+        "testId": "success-title"
+      },
+      {
+        "text": "Your new balance is $30.00."
+      },
+      {
+        "text": "View details"
+      },
+      {
+        "text": "Done"
+      },
+      {
+        "testId": "success-screen"
+      },
+      {
+        "role": "image",
+        "name": "Northwind Bank"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "button",
+        "name": "Back"
+      },
+      {
+        "role": "heading",
+        "name": "Add money"
+      },
+      {
+        "text": "Current balance $10.00"
+      },
+      {
+        "text": "$",
+        "testId": "amount-currency"
+      },
+      {
+        "text": "0",
+        "testId": "amount-display"
+      },
+      {
+        "text": "$20"
+      },
+      {
+        "text": "$50"
+      },
+      {
+        "text": "$100"
+      }
+    ],
+    "endWaitMs": 11657,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

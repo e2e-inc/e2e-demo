@@ -1,0 +1,156 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:15.483Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Pay or request\"",
+        "target": {
+          "role": "button",
+          "name": "Pay or request"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Ava Chen Ava Chen @ava-chen\"",
+        "target": {
+          "role": "button",
+          "name": "Ava Chen Ava Chen @ava-chen",
+          "testId": "person-ava-chen"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"3\"",
+        "target": {
+          "role": "button",
+          "name": "3",
+          "testId": "key-3"
+        }
+      },
+      {
+        "name": "type",
+        "summary": "type \"E2E coffee\" into textbox \"Note\"",
+        "target": {
+          "role": "textbox",
+          "name": "Note",
+          "testId": "pay-note",
+          "placeholder": "What's it for?"
+        },
+        "value": "E2E coffee"
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Pay\"",
+        "target": {
+          "role": "button",
+          "name": "Pay",
+          "testId": "submit-pay"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Confirm payment\"",
+        "target": {
+          "role": "button",
+          "name": "Confirm payment",
+          "testId": "confirm-submit"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/core-flows.e2e.ts::pays%20a%20person%20and%20records%20the%20payment",
+      "targetId": "web",
+      "instructionDigest": "0587c4f61c31726dddb256eae91a53cec84a186d4e5a204f95a3201ba563dee1",
+      "paramsDigest": "388088ea3cbb96bf5e4957afc6d0a1b745835ed811518b676cb22b25ce6a8728",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Paid Ava Chen $3.00 from the TesterPay balance with the note “E2E coffee.” The confirmation matched the payment, and the success screen shows “You paid Ava Chen.”",
+    "startPath": "/",
+    "endPath": "/pay/success?kind=pay&amount=300&name=Ava+Chen&color=%239969FA&id=8590da0b-5a80-4454-b048-456e741a636c",
+    "endAnchors": [
+      {
+        "text": "$3.00"
+      },
+      {
+        "text": "You paid Ava Chen",
+        "testId": "success-title"
+      },
+      {
+        "text": "Ava Chen has the money. That was easy."
+      },
+      {
+        "text": "View details"
+      },
+      {
+        "text": "Done"
+      },
+      {
+        "testId": "success-screen"
+      },
+      {
+        "role": "button",
+        "name": "View details",
+        "testId": "success-details"
+      },
+      {
+        "role": "button",
+        "name": "Done",
+        "testId": "success-done"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "heading",
+        "name": "Welcome back, E2E"
+      },
+      {
+        "text": "Your money. Your people. All in one place."
+      },
+      {
+        "role": "button",
+        "name": "Find people",
+        "testId": "home-search"
+      },
+      {
+        "role": "button",
+        "name": "Show my code",
+        "testId": "home-qr"
+      },
+      {
+        "text": "TesterPay balance"
+      },
+      {
+        "text": "$10.00",
+        "testId": "balance-amount"
+      },
+      {
+        "text": "Add money"
+      },
+      {
+        "text": "Transfer"
+      }
+    ],
+    "endWaitMs": 11736,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

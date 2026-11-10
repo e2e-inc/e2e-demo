@@ -1,0 +1,179 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:20:03.929Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"1\"",
+        "target": {
+          "role": "button",
+          "name": "1",
+          "testId": "key-1"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"2\"",
+        "target": {
+          "role": "button",
+          "name": "2",
+          "testId": "key-2"
+        }
+      },
+      {
+        "name": "type",
+        "summary": "type \"E2E lunch\" into textbox \"Note\"",
+        "target": {
+          "role": "textbox",
+          "name": "Note",
+          "testId": "split-note",
+          "placeholder": "What was the bill for?"
+        },
+        "value": "E2E lunch"
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Next\"",
+        "target": {
+          "role": "button",
+          "name": "Next",
+          "testId": "split-next-amount"
+        }
+      },
+      {
+        "name": "type",
+        "summary": "type \"Ava Chen\" into textbox \"Search friends\"",
+        "target": {
+          "role": "textbox",
+          "name": "Search friends",
+          "testId": "split-search",
+          "placeholder": "Search friends"
+        },
+        "value": "Ava Chen"
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Ava Chen Ava Chen @ava-chen\"",
+        "target": {
+          "role": "button",
+          "name": "Ava Chen Ava Chen @ava-chen",
+          "testId": "split-person-ava-chen"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Next (1 selected)\"",
+        "target": {
+          "role": "button",
+          "name": "Next (1 selected)",
+          "testId": "split-next-people"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Send 1 request\"",
+        "target": {
+          "role": "button",
+          "name": "Send 1 request",
+          "testId": "split-submit"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/core-flows.e2e.ts::splits%20a%20bill%20into%20requests",
+      "targetId": "web",
+      "instructionDigest": "c783e3284ad101722db4124ccb49033f4dc6e1e9479d26f1aca8d77854810be7",
+      "paramsDigest": "a1eb6633aa366f041adb57b3f257703e6ba211b56b0b80abffa0ab1b7e835ade",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Entered $12 with note “E2E lunch,” selected Ava Chen, and reviewed the even split as $6 each for you and Ava. Sent the request; the success screen confirms “Split $12.00 2 ways” and that Ava will get a request.",
+    "startPath": "/split/new",
+    "endPath": "/pay/success?kind=split&amount=1200&name=Ava+Chen&color=%239969FA&title=Split+%2412.00+2+ways&body=Ava+will+each+get+a+request.",
+    "endAnchors": [
+      {
+        "text": "AC"
+      },
+      {
+        "text": "$12.00"
+      },
+      {
+        "text": "Split $12.00 2 ways",
+        "testId": "success-title"
+      },
+      {
+        "text": "Ava will each get a request."
+      },
+      {
+        "text": "Done"
+      },
+      {
+        "testId": "success-screen"
+      },
+      {
+        "role": "image",
+        "name": "Ava Chen"
+      },
+      {
+        "role": "button",
+        "name": "Done",
+        "testId": "success-done"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "button",
+        "name": "Back"
+      },
+      {
+        "role": "heading",
+        "name": "Split a bill"
+      },
+      {
+        "text": "$",
+        "testId": "amount-currency"
+      },
+      {
+        "text": "0",
+        "testId": "amount-display"
+      },
+      {
+        "role": "textbox",
+        "name": "Note",
+        "testId": "split-note",
+        "placeholder": "What was the bill for?"
+      },
+      {
+        "text": "."
+      },
+      {
+        "role": "button",
+        "name": "Delete",
+        "testId": "key-backspace"
+      },
+      {
+        "text": "Next"
+      }
+    ],
+    "endWaitMs": 12230,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

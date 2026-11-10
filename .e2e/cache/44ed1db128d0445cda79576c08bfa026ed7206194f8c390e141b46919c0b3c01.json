@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:18:46.988Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Friends ✓\"",
+        "target": {
+          "role": "button",
+          "name": "Friends ✓",
+          "testId": "person-friend-toggle"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/social.e2e.ts::people%20and%20profile::adds%20and%20removes%20a%20friend",
+      "targetId": "web",
+      "instructionDigest": "447a5972a599af1956a9ce6d5cfce5b8345257300e977492d1a2d3bedc97d338",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Unfriended Priya Patel on her profile. The friend toggle now reads “Add friend,” confirming she is no longer marked as a friend.",
+    "startPath": "/people/priya-patel",
+    "endPath": "/people/priya-patel",
+    "endAnchors": [
+      {
+        "text": "Add friend"
+      },
+      {
+        "role": "button",
+        "name": "Add friend",
+        "testId": "person-friend-toggle"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "Friends ✓"
+      },
+      {
+        "role": "button",
+        "name": "Friends ✓",
+        "testId": "person-friend-toggle"
+      }
+    ],
+    "endWaitMs": 11401,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

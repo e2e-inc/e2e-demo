@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:22.667Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Get the debit card\"",
+        "target": {
+          "role": "button",
+          "name": "Get the debit card",
+          "testId": "get-debit-card"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/cards.e2e.ts::cards::manages%20debit%20card%20controls",
+      "targetId": "web",
+      "instructionDigest": "29e53007141e32c7d5ee08650c394acebdd5807a2f6f9ee418284a52c7f8bf0c",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Selected Get the debit card and arrived at the Verify identity screen. Stopped there as requested; no identity information was entered or submitted.",
+    "startPath": "/cards",
+    "endPath": "/settings/verify?next=debit",
+    "endAnchors": [
+      {
+        "role": "button",
+        "name": "Back"
+      },
+      {
+        "role": "heading",
+        "name": "Verify identity"
+      },
+      {
+        "role": "heading",
+        "name": "Confirm it's you"
+      },
+      {
+        "text": "Financial rules require us to verify who you are before you can get a card or move larger amounts."
+      },
+      {
+        "text": "Demo mode: any realistic-looking values are accepted instantly. Nothing is checked against real records."
+      },
+      {
+        "text": "Legal name"
+      },
+      {
+        "role": "textbox",
+        "name": "Legal name",
+        "testId": "verify-name",
+        "placeholder": "Jordan A. Lee",
+        "value": "E2E Member"
+      },
+      {
+        "text": "Date of birth (YYYY-MM-DD)"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "heading",
+        "name": "Cards"
+      },
+      {
+        "text": "Spend your balance anywhere, in-store or online."
+      },
+      {
+        "text": "Debit"
+      },
+      {
+        "text": "TesterPay Debit Card"
+      },
+      {
+        "text": "Spend your balance anywhere. No fees, no credit check, instant virtual card."
+      },
+      {
+        "text": "Get the debit card"
+      },
+      {
+        "text": "Credit"
+      },
+      {
+        "text": "TesterPay Credit Card"
+      }
+    ],
+    "endWaitMs": 11177,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-09T16:19:07.903Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Confirm payment\"",
+        "target": {
+          "role": "button",
+          "name": "Confirm payment",
+          "testId": "confirm-submit"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "tests/social.e2e.ts::people%20and%20profile::pays%20privately%20with%20a%20note%20and%20emoji",
+      "targetId": "web",
+      "instructionDigest": "96396620554af3a21bf3d3f69bed4dbdabe54c6bb3de28fe3266ae98a47c8938",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "gateway",
+      "model": "openai/gpt-6-luna-fast"
+    },
+    "summary": "Confirmed the $2.00 payment to Marcus Reed. The app now shows the success screen: “You paid Marcus Reed.”",
+    "startPath": "/pay/demo_marcus?mode=pay&handle=marcus-reed&name=Marcus+Reed&color=%23FB5E1B",
+    "endPath": "/pay/success?kind=pay&amount=200&name=Marcus+Reed&color=%23FB5E1B&id=1e35e200-ee06-4019-af6f-790c0c6bfe30",
+    "endAnchors": [
+      {
+        "text": "$2.00"
+      },
+      {
+        "text": "You paid Marcus Reed",
+        "testId": "success-title"
+      },
+      {
+        "text": "Marcus Reed has the money. That was easy."
+      },
+      {
+        "text": "View details"
+      },
+      {
+        "text": "Done"
+      },
+      {
+        "testId": "success-screen"
+      },
+      {
+        "role": "button",
+        "name": "View details",
+        "testId": "success-details"
+      },
+      {
+        "role": "button",
+        "name": "Done",
+        "testId": "success-done"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "button",
+        "name": "Back"
+      },
+      {
+        "text": "Marcus Reed"
+      },
+      {
+        "text": "@marcus-reed"
+      },
+      {
+        "text": "$",
+        "testId": "amount-currency"
+      },
+      {
+        "text": "2",
+        "testId": "amount-display"
+      },
+      {
+        "role": "textbox",
+        "name": "Note",
+        "testId": "pay-note",
+        "placeholder": "What's it for?",
+        "value": "E2E pizza"
+      },
+      {
+        "text": "🍕"
+      },
+      {
+        "text": "☕️"
+      }
+    ],
+    "endWaitMs": 11426,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "aa3d087eaca58999f953e6349ae2587c99965ee3517abc452aaa77745f45e39c",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "f9f49ed79c2662c7f6e0522da33af26cd0588919fce8b674530ba7c83e5d217c",
+      "agentContextDigest": "d31f62ec995fb6a6c72e892b86e5af303df89531fa090112467356ec7c168fab"
+    }
+  }
+}
