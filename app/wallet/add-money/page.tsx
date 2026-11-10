@@ -5,13 +5,13 @@ import { useState } from 'react';
 
 import { type FundingChoice, FundingPicker } from '@/components/funding-picker';
 import { AmountDisplay, Keypad } from '@/components/keypad';
-import { Chip, ErrorText, Header, Pill, Screen } from '@/components/ui';
+import { Card, Chip, ErrorText, Header, Pill, Screen } from '@/components/ui';
 import { api, ApiError } from '@/lib/api';
 import { href } from '@/lib/href';
 import { applyKeypadKey, formatCents, parseAmount } from '@/lib/money';
 import { useFundingSources, useRefreshMoney } from '@/lib/queries';
 import { useSession } from '@/lib/session';
-import { colors, spacing } from '@/lib/theme';
+import { colors } from '@/lib/theme';
 
 const PRESETS = [2000, 5000, 10000, 25000];
 
@@ -82,22 +82,26 @@ export default function AddMoney() {
         />
       }
     >
-      <p className={styles.balance}>
-        Current balance {formatCents(profile?.balanceCents ?? 0)}
-      </p>
-      <AmountDisplay text={amountText} />
-      <div className={styles.presets}>
-        {PRESETS.map((preset) => (
-          <Chip
-            key={preset}
-            label={formatCents(preset, {
-              compact: true,
-            })}
-            selected={amountCents === preset}
-            onPress={() => setAmountText(String(preset / 100))}
-          />
-        ))}
-      </div>
+      <Card className={styles.amountCard}>
+        <p className={styles.balanceLabel}>Current balance</p>
+        <p className={styles.balanceValue}>
+          {formatCents(profile?.balanceCents ?? 0)}
+        </p>
+        <div className={styles.divider} />
+        <AmountDisplay text={amountText} />
+        <div className={styles.presets}>
+          {PRESETS.map((preset) => (
+            <Chip
+              key={preset}
+              label={formatCents(preset, {
+                compact: true,
+              })}
+              selected={amountCents === preset}
+              onPress={() => setAmountText(String(preset / 100))}
+            />
+          ))}
+        </div>
+      </Card>
       <FundingPicker
         title="From"
         value={funding}
@@ -106,11 +110,7 @@ export default function AddMoney() {
         allowBalance={false}
       />
       <ErrorText>{error}</ErrorText>
-      <div
-        style={{
-          marginTop: spacing.lg,
-        }}
-      >
+      <div className={styles.keypad}>
         <Keypad
           onKey={(key) =>
             setAmountText((current) => applyKeypadKey(current, key))
@@ -122,6 +122,10 @@ export default function AddMoney() {
 }
 
 const styles = {
-  balance: 'text-center text-ink-secondary text-sm mt-2',
-  presets: 'flex flex-row justify-center gap-2 mb-4 flex-wrap',
+  amountCard: 'mt-2 mb-4 items-center gap-1 p-5 shadow-sm',
+  balanceLabel: 'text-xs font-medium uppercase tracking-wide text-ink-tertiary',
+  balanceValue: 'text-base font-semibold text-ink-secondary',
+  divider: 'my-2 h-px w-full bg-divider',
+  presets: 'flex flex-row flex-wrap justify-center gap-2 pt-2',
+  keypad: 'mt-4',
 } as const;
