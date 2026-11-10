@@ -1,7 +1,9 @@
 import { describe, test } from '@e2e-dev/web';
+import { expect } from 'e2e';
+import { z } from 'zod';
 
 describe('wallet', { session: 'member', tags: ['wallet'] }, () => {
-  test('transfers part of the balance to a linked bank', async ({ app, agent }) => {
+  test('transfers part of the balance to a linked bank', async ({ app, agent, screen }) => {
     await app.open('/wallet/funding-sources');
     await agent.act('link a {institution} bank account with account number {accountNumber}', {
       params: { institution: 'Summit Federal', accountNumber: '9876543210' },
@@ -15,13 +17,17 @@ describe('wallet', { session: 'member', tags: ['wallet'] }, () => {
     await agent.assert('a success screen says Transfer on its way');
 
     await agent.act('view the transfer details');
-    await agent.assert('the details describe a $6.00 transfer to a bank using the Standard speed of 1-3 days');
+    const transfer = await agent.extract('the transfer amount, Type, and Speed rows', {
+      schema: z.object({ amount: z.string(), type: z.string(), speed: z.string() }),
+    });
+    expect(transfer).toMatchObject({ type: 'Transfer to bank', speed: 'Standard (1-3 days)' });
+    expect(transfer.amount).toContain('$6.00');
 
     await app.open('/');
-    await agent.waitFor('the home dashboard shows a TesterPay balance of $4.00');
+    await expect(screen.getByTestId('balance-amount')).toHaveText('$4.00');
   });
 
-  test('sends an instant transfer to a debit card and pays the fee', async ({ app, agent }) => {
+  test('sends an instant transfer to a debit card and pays the fee', async ({ app, agent, screen }) => {
     await app.open('/wallet/funding-sources');
     await agent.act('link an {issuer} debit card with card number {cardNumber}', {
       params: { issuer: 'Atlas Card', cardNumber: '4111 1111 1111 4242' },
@@ -32,14 +38,15 @@ describe('wallet', { session: 'member', tags: ['wallet'] }, () => {
     await agent.act('set up an Instant transfer of {amount} to the Atlas Card debit card without submitting it', {
       params: { amount: '$4' },
     });
-    await agent.assert('the transfer is Instant, goes to the Atlas Card debit card, and the submit button reads Transfer $4.00');
+    await agent.assert('the transfer is Instant and goes to the Atlas Card debit card');
+    await expect(screen.getByTestId('transfer-submit')).toHaveText('Transfer $4.00');
 
     await agent.act('submit the transfer');
     await agent.assert('a success screen says Transfer sent instantly');
 
     // $4.00 plus the $0.25 minimum instant fee leaves $5.75.
     await agent.act('finish and return to the home dashboard');
-    await agent.assert('the home dashboard shows a TesterPay balance of $5.75');
+    await expect(screen.getByTestId('balance-amount')).toHaveText('$5.75');
   });
 
   test('changes the default funding source and removes the old one', async ({ app, agent }) => {
