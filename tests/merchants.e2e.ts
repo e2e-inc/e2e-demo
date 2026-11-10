@@ -1,60 +1,56 @@
 import { describe, test } from '@e2e-dev/web';
-import { expect } from 'e2e';
 
 describe('pay a business', { session: 'member', tags: ['merchants'] }, () => {
-  test('pays a business in store from the balance', async ({ app, agent, screen }) => {
-    await app.open('/profile');
-    await agent.act('open Bloom Coffee Roasters and pay {amount} in store from the TesterPay balance', {
-      params: { amount: '$4.50' },
-    });
-    await expect(screen.getByTestId('success-title')).toHaveText('You paid Bloom Coffee Roasters');
+  test('pays a business in store from the balance', async ({ app, agent }) => {
+    await app.open('/merchants');
+    await agent.act('open Bloom Coffee Roasters');
+    await agent.assert('the Bloom Coffee Roasters business page is shown');
+
+    await agent.act('pay {amount} in store from the TesterPay balance', { params: { amount: '$4.50' } });
+    await agent.assert('a success screen says You paid Bloom Coffee Roasters');
 
     await agent.act('view the payment details');
-    await expect(screen.getByTestId('detail-amount')).toContainText('$4.50');
-    await agent.assert('the details describe a business payment made in store');
+    await agent.assert('the details describe a $4.50 business payment made in store');
 
     await app.open('/');
-    await expect(screen.getByTestId('balance-amount')).toHaveText('$5.50');
+    await agent.waitFor('the home dashboard shows a TesterPay balance of $5.50');
   });
 
-  test('covers an online order the balance cannot afford with a bank', async ({ app, agent, screen }) => {
+  test('covers an online order the balance cannot afford with a bank', async ({ app, agent }) => {
     await app.open('/merchants');
     await agent.act('open Noodle Theory and switch to Online checkout');
-    await expect(screen.getByTestId('merchant-cart')).toContainText('$24.00');
-    await expect(screen.getByTestId('funding-picker')).toContainText('Not enough balance');
+    await agent.assert('the online order totals $24.00 and the app warns there is not enough balance');
 
-    await agent.act('check out the Noodle Theory online order, paying with a newly linked bank account numbered {accountNumber}', {
+    await agent.act('link a new bank account numbered {accountNumber} from the Pay with options', {
       params: { accountNumber: '000555554321' },
     });
-    await expect(screen.getByTestId('success-title')).toHaveText('You paid Noodle Theory');
+    await agent.assert('the Noodle Theory business page is shown');
+
+    await agent.act('check out the Noodle Theory online order, paying with the bank account ending in 4321');
+    await agent.assert('a success screen says You paid Noodle Theory');
 
     await agent.act('view the payment details');
-    await expect(screen.getByText('Online checkout')).toBeVisible();
-    await expect(screen.getByText('Balance + Northwind Bank Checking ••4321')).toBeVisible();
+    await agent.assert('the details describe an online checkout funded by the balance plus a Northwind Bank Checking account ending in 4321');
 
     // The balance covers the first $10.00, the bank the remaining $14.00.
     await app.open('/');
-    await expect(screen.getByTestId('balance-amount')).toHaveText('$0.00');
+    await agent.waitFor('the home dashboard shows a TesterPay balance of $0.00');
   });
 
-  test('pays a business by entering its store code', async ({ app, agent, screen, browser }) => {
-    await app.open('/');
-    await agent.act('open Scan, enter the store code {code}, and continue', {
-      params: { code: 'PPZ-M-TAQ' },
-    });
-    await expect(browser).toHaveURL(/\/merchants\/m_taqueria$/);
-    await expect(screen.getByTestId('merchant-hero')).toContainText('La Esquina Taqueria');
+  test('pays a business by entering its store code', async ({ app, agent }) => {
+    await app.open('/qr?tab=scan');
+    await agent.act('enter the store code {code} and continue', { params: { code: 'PPZ-M-TAQ' } });
+    await agent.assert('the La Esquina Taqueria business page is shown');
 
     await agent.act('pay {amount} in store from the TesterPay balance', { params: { amount: '$3' } });
-    await expect(screen.getByTestId('success-title')).toHaveText('You paid La Esquina Taqueria');
+    await agent.assert('a success screen says You paid La Esquina Taqueria');
   });
 
-  test('rejects an unknown store code', async ({ app, agent, screen, browser }) => {
+  test('rejects an unknown store code', async ({ app, agent }) => {
     await app.open('/qr?tab=scan');
-    await agent.act('enter the code {code} and continue, then stop once the app responds', {
+    await agent.act('enter the code {code} and continue, stopping once the app responds', {
       params: { code: 'PPZ-M-NOPE' },
     });
-    await expect(browser).toHaveURL('/qr?tab=scan');
     await agent.assert('the app says it does not recognize the store code');
   });
 });

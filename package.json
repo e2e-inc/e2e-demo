@@ -22,14 +22,14 @@
     "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
-    "@e2e-dev/web": "0.15.2",
+    "@e2e-dev/web": "0.15.5",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/sql.js": "^1.4.11",
     "ai": "^7.0.0",
-    "e2e": "0.21.2",
+    "e2e": "0.23.0",
     "eslint": "^9",
     "eslint-config-next": "16.3.7",
     "tailwindcss": "^4",
