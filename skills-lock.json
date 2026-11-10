@@ -2,7 +2,7 @@
   "version": 1,
   "skills": {
     "create-verification-skill": {
-      "source": "tester-army/e2e",
+      "source": "e2e-inc/e2e",
       "sourceType": "github",
       "skillPath": "skills/create-verification-skill/SKILL.md",
       "computedHash": "97108d7d15283193810a38ebec6c6576fb3af43ab54f7e32995c3b75ffa11bd5"
