@@ -23,9 +23,11 @@ kebab case: `ava-chen`, `marcus-reed`, `priya-patel`, `leo-alvarez`,
 
 ## Driving it with e2e
 
-`tests/social.e2e.ts` "edits the display name and bio" and "adds and
-removes a friend". Pinned: `profile-handle` (stays `@e2e-member` after a
-name change). Live walk: `open_session`, sign up, `navigate /people`, type
+`tests/social.e2e.ts` "edits the display name and bio", "adds and
+removes a friend", and "switches the home feed between Friends and
+Everyone". Pinned: `profile-handle` (stays `@e2e-member` after a
+name change), and `aria-selected` on the home feed's `Friends` and
+`Everyone` tabs (the member has no friends, so Friends is empty). Live walk: `open_session`, sign up, `navigate /people`, type
 into `people-search`, `observe`.
 
 ## Proof
