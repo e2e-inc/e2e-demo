@@ -7,8 +7,8 @@ import base from './e2e.config';
 
 const context = [
   base.agents.default.context,
-  'Everything runs in the browser: the backend is an in-page SQLite database in IndexedDB, so no request leaves the page and nothing is sent by email or SMS.',
-  'Seed data is not a bug: the demo people (Ava Chen, Marcus Reed, Priya Patel, Leo Alvarez), the eight businesses and their PPZ-M-* store codes, the two pending requests a new member starts with (Movie snacks $6 from Marcus, Dinner last week from Ava), and the $10.00 starting balance.',
+  'Everything runs in the browser: the backend is an in-page SQLite database in IndexedDB, so app data never reaches a server and nothing is sent by email or SMS. Only the demo portraits load from images.unsplash.com.',
+  'Seed data is not a bug: the ten demo people (Ava Chen, Marcus Reed, Priya Patel, Leo Alvarez, Nia Okafor, Sam Torres, Jules Kim, Hana Sato, Theo Brooks, Zoe Martin), the eight businesses and their PPZ-M-* store codes, the two pending requests a new member starts with (Movie snacks $6 from Marcus, Dinner last week from Ava), and the $10.00 starting balance.',
   'Bank links, card numbers, identity checks, and card approvals are simulated and accept any well-formed input.',
   'Instant transfers cost 1.75% with a $0.25 minimum and $25 maximum; standard transfers are free. A single payment is capped at $5,000.',
   'Never press Reset demo in Settings unless the charter asks for it: it wipes the account and ends the run signed out.',

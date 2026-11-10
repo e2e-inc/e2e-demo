@@ -42,7 +42,7 @@ Proved on 2026-11-10: `npx e2e run tests/wallet.e2e.ts --output
 Signed in, with `--session member`:
 
 ```
-wallet-fees|web|skeptic|Signed in as the member, starting at /wallet/transfer, link an Atlas Card debit card, then set up Instant transfers of $4, $100, and $2,000; check every fee against 1.75% with a $0.25 minimum and $25 maximum, and the balance afterwards
+wallet-fees|web|skeptic|Signed in as the member, starting at /wallet/funding-sources, link an Atlas Card debit card and a bank account, add $2,200 from the bank, then on /wallet/transfer set up Instant transfers of $4, $100, and $2,000; check every fee against 1.75% with a $0.25 minimum and $25 maximum, and the balance afterwards
 wallet-input|web|fuzzer|Signed in as the member, starting at /wallet/link, link banks and cards with an empty number, letters, 3 digits, 40 digits, spaces and dashes, and a duplicate of an already linked number; report input accepted that should not be, rejected without a clear message, or stored with the wrong last 4
 ```
 

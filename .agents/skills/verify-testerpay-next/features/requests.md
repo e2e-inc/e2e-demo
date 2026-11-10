@@ -12,8 +12,9 @@ Incoming and outgoing money requests, and splitting a bill into requests.
   `Paid`, `Declined`, or `Cancelled`.
 - Split on `/split/new`: amount (`split-next-amount`), people
   (`split-search`, `split-person-<handle>`, `split-include-self`,
-  `split-next-people`), note (`split-note`), send (`split-submit`). Shares
-  are even; remainder cents go one each to the first participants.
+  `split-next-people`), note (`split-note`), send (`split-submit`). Split
+  evenly (remainder cents go one each to the first participants) or by
+  custom amounts, where the member's share is what the others' leave.
 
 ## How to get to it (user POV)
 
@@ -35,8 +36,9 @@ Chen.
 
 `request-status` reads the new state; a paid request moves the balance
 (`$10.00` to `$4.00` for Movie snacks) and shows in Activity; a split's
-success says `the $12.00 bill was split 2 ways` and each share is a pending
-request on `/activity?tab=requests`.
+success says `the $12.00 bill was split 2 ways`, and each other
+participant's share is a pending request on `/activity?tab=requests` (the
+member's own share creates no request).
 
 ## Charters
 

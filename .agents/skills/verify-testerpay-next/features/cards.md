@@ -13,8 +13,9 @@ A debit card and a credit card, both behind a one-time identity check.
 - Issue on `/cards/new`: design choice (Midnight and others), cardholder
   terms (`card-agree`), `card-issue-submit`. Credit is approved with a
   $3,000 limit.
-- Card page `/cards/[id]`: `card-details`, `card-show-number`, daily spend
-  limit (`card-spend`), `card-order-physical`,
+- Card page `/cards/[id]`: `card-details`, `card-show-number`, the `Spend`
+  shortcut to `/merchants` (`card-spend`), the `Daily spend limit` control
+  (no test id; its value reads `Currently $X`), `card-order-physical`,
   `card-activate-physical`, lock (`card-lock-switch`, role `switch`
   named `Lock card`), `card-fresh-banner` after issue.
 

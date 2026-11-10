@@ -6,8 +6,9 @@ the demo. Route access per session status is enforced client-side in
 
 ## Sub-features
 
-- Welcome (`/welcome`): `Sign up` and `Sign in`. Signed out, every other
-  route redirects here.
+- Welcome (`/welcome`): `Create account` and `Already have an account?
+  Sign in`. Signed out, `/sign-in` and `/sign-up` open directly and every
+  other route redirects here.
 - Sign up (`/sign-up`): full name, email, password. Success lands on
   `/onboarding/handle`, and every other route redirects there until a
   handle is chosen.
@@ -35,11 +36,12 @@ test) and `newcomer` (made by `tests/account.e2e.ts`), both in
 `tests/core-flows.e2e.ts` "signs out and signs back in". Pinned:
 `welcome-sign-up`, `welcome-sign-in`, `sign-up-submit`, `handle-hint`,
 `handle-submit`, `balance-amount`, `home-dashboard`,
-`screen.getByLabel('Full name' | 'Email' | 'Password')`,
-`screen.getByRole('alert')`. From source: `sign-in-email`,
-`sign-in-password`, `sign-in-submit`, `handle-input`,
-`handle-display-name`, `sign-out`, `reset-demo`. Live walk: `open_session`,
-`navigate /welcome`, tap `Sign up`, fill, `type_secret` the password, submit,
+`screen.getByLabel('Full name')`, `screen.getByLabel('Email')`,
+`screen.getByLabel('Password')`, `screen.getByRole('alert')`, and on the
+sign-in screen `sign-in-email`, `sign-in-password`, `sign-in-submit`.
+From source: `handle-input`, `handle-display-name`, `sign-out`,
+`reset-demo`. Live walk: `open_session`, `navigate /welcome`, tap
+`Create account`, fill, `type_secret` the password, submit,
 `observe` the handle screen.
 
 ## Proof

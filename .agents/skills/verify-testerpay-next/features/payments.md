@@ -21,8 +21,9 @@ emoji, and a visibility, then see it in Activity.
 
 ## How to get to it (user POV)
 
-Sidebar `Pay or request`, or `/pay`. Signed in as `member`. Ava Chen,
-Marcus Reed, Priya Patel, and Leo Alvarez are the searchable people.
+Sidebar `Pay or request`, or `/pay`. Signed in as `member`. Ten demo
+people are searchable: Ava Chen, Marcus Reed, Priya Patel, Leo Alvarez,
+Nia Okafor, Sam Torres, Jules Kim, Hana Sato, Theo Brooks, Zoe Martin.
 
 ## Driving it with e2e
 
@@ -37,10 +38,15 @@ tap the person, tap keypad keys, `observe` the confirm sheet.
 
 ## Proof
 
-The success screen says `You paid <name>` (or `You requested $X.XX`); the
-detail shows the amount, the note with its emoji, the visibility, and
-status `Completed`; `balance-amount` on `/` dropped by exactly the amount;
-`/activity` lists it.
+A payment: the success screen says `You paid <name>`; the detail shows the
+amount, the note with its emoji, the visibility, and status `Completed`;
+`balance-amount` on `/` dropped by the part the balance covered (all of it
+when paid from the balance; with a linked source, the source covers what
+the balance can't); `/activity` lists it.
+
+A request: the success screen says `You requested $X.XX`; no money moves
+and the balance is unchanged; it is a pending request on
+`/activity?tab=requests` (see [requests.md](requests.md)).
 
 ## Charters
 

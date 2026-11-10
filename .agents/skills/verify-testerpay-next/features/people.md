@@ -16,8 +16,10 @@ Finding people, friending them, and the member's own profile.
 ## How to get to it (user POV)
 
 Sidebar `Friends` for people, `Your profile` for the profile, `Settings`
-for edit. Signed in as `member`. Handles: `ava-chen`, `marcus-reed`,
-`priya-patel`, `leo-alvarez`.
+for edit. Signed in as `member`. Handles are the names in
+kebab case: `ava-chen`, `marcus-reed`, `priya-patel`, `leo-alvarez`,
+`nia-okafor`, `sam-torres`, `jules-kim`, `hana-sato`, `theo-brooks`,
+`zoe-martin`.
 
 ## Driving it with e2e
 

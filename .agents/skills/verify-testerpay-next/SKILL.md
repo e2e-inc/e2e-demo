@@ -21,9 +21,11 @@ run at a server you started yourself instead (no command is run then).
 
 There is no backend to seed. The Hono + SQLite backend runs inside the page
 (`lib/backend`), stored per browser in IndexedDB `demo-finance`, so every
-test, every `open_session`, and every explorer starts from an empty database
-holding only the seed data (four demo people, eight businesses, the
-`PPZ-M-*` store codes). The session token is `localStorage`
+browser context starts from a fresh database holding only the seed data
+(ten demo people, eight businesses, the `PPZ-M-*` store codes). A signed-out
+test, `open_session`, or explorer starts there with no account; a test or
+explorer on `{ session: 'member' }` starts from the restored state the setup
+test saved, the member account on top of that seed. The session token is `localStorage`
 `testerpay.session-token`. No env vars are needed beyond the model key
 (`AI_GATEWAY_API_KEY`, already read by `gateway()`); `E2E_MEMBER_PASSWORD`
 and `E2E_NEWCOMER_PASSWORD` override the credential defaults.
