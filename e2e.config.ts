@@ -1,9 +1,12 @@
 import type { E2EConfig } from 'e2e';
 import { web } from '@e2e-dev/web';
 import { gateway } from 'ai';
+import { decisionFilter } from '@e2e-dev/decision';
 
 export default {
   tests: ['tests/*.e2e.ts'],
+  // With --changed-since, Jev leaves out the tests the change can't affect. Without it, every test runs.
+  filters: [decisionFilter({ model: gateway.decisionModel('typesafe-ai/jev') })],
   // The Vercel AI Gateway serves the model id and reads AI_GATEWAY_API_KEY, or the OIDC token of a linked Vercel project.
   agents: {
     default: {

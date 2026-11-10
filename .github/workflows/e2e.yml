@@ -18,6 +18,9 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # The test filter needs the base branch and the merge base for --changed-since.
+          fetch-depth: 0
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: 24
@@ -28,8 +31,9 @@ jobs:
         run: npx e2e-web install chromium --with-deps
 
       # APP_URL is left unset so e2e.config.ts starts the Next.js dev server itself.
+      # Pull requests run only the tests the change can affect; pushes to main run every test.
       - name: Run e2e
-        run: npx e2e run --reporter list,junit
+        run: npx e2e run --reporter list,junit ${{ github.event_name == 'pull_request' && format('--changed-since origin/{0}', github.base_ref) || '' }}
         env:
           AI_GATEWAY_API_KEY: ${{ secrets.AI_GATEWAY_API_KEY }}
 
