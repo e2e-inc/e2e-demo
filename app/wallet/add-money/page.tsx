@@ -84,7 +84,7 @@ export default function AddMoney() {
     >
       <Card className={styles.amountCard}>
         <p className={styles.balanceLabel}>Current balance</p>
-        <p className={styles.balanceValue}>
+        <p className={styles.balanceValue} data-testid="add-money-balance">
           {formatCents(profile?.balanceCents ?? 0)}
         </p>
         <div className={styles.divider} />

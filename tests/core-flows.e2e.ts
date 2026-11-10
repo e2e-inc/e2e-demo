@@ -17,6 +17,9 @@ test('signs out and signs back in', { session: 'member', tags: ['smoke', 'auth']
 
 test('links a bank and adds money', { session: 'member', tags: ['smoke', 'wallet'] }, async ({ app, agent, screen }) => {
   await app.open('/wallet/add-money');
+  await expect(screen.getByTestId('add-money-balance')).toHaveText('$10.00');
+  await agent.assert('the current balance, the amount, and the preset amounts are grouped in one card', { vision: true });
+
   await agent.act('link a bank account with account number {accountNumber}', {
     params: { accountNumber: '000123456789' },
   });
