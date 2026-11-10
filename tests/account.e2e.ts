@@ -25,9 +25,11 @@ test('resets the demo and removes the local account', { session: 'member', tags:
   await agent.act('reset the demo');
   await agent.assert('the welcome screen is shown');
 
-  await agent.act('submit the sign-in form with the given account credentials', {
-    params: { username: member.username, password: member.password },
-  });
+  // Exact steps: this sign-in is meant to fail, which an agent step reports as an auth failure.
+  await screen.getByTestId('welcome-sign-in').tap();
+  await screen.getByTestId('sign-in-email').fill(member.username);
+  await screen.getByTestId('sign-in-password').fill(member.password);
+  await screen.getByTestId('sign-in-submit').tap();
   // A failed sign-in must leave the member signed out, with the app's exact error.
   await expect(screen.getByRole('alert').filter({ hasText: 'Email or password is incorrect' })).toBeVisible();
   await agent.assert('the sign-in screen explains that accounts are local to this device');
