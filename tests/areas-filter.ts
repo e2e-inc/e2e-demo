@@ -4,8 +4,8 @@ import type { TestFilter } from 'e2e';
 /**
  * The test tags each route of the app reaches, by path from the project root.
  * A file matching several prefixes reaches the tags of all of them. A change to
- * any file no prefix matches, such as `components/`, `lib/`, the home screen, or
- * a test, leaves nothing out, so the decision filter judges it.
+ * any other file no prefix matches, such as `components/`, `lib/`, or the home
+ * screen, leaves nothing out, so the decision filter judges it.
  */
 const AREAS: Readonly<Record<string, readonly string[]>> = {
   'app/(auth)/': ['auth'],
@@ -39,9 +39,15 @@ const AREA_TAGS: ReadonlySet<string> = new Set(Object.values(AREAS).flat());
 export const areas = {
   name: 'areas',
   filter(tests, { changes, projectRoot }) {
+    const projectPath = (file: string) => relative(projectRoot, join(changes.root, file)).split(sep).join('/');
+    const changed = new Set(changes.files.map(projectPath));
+    // A changed test or setup file reaches no area: its own tests stay, and the decision filter narrows them.
+    const testFiles = new Set(tests.flatMap((test) => (test.setupFile === undefined ? [test.file] : [test.file, test.setupFile])));
+    const keep = (test: (typeof tests)[number]) => changed.has(test.file) || (test.setupFile !== undefined && changed.has(test.setupFile));
     const reached = new Set<string>();
     for (const file of changes.files) {
-      const path = relative(projectRoot, join(changes.root, file)).split(sep).join('/');
+      const path = projectPath(file);
+      if (testFiles.has(path)) continue;
       const matched = Object.keys(AREAS).filter((prefix) => path.startsWith(prefix));
       if (matched.length === 0) return { exclude: {}, note: `${file} is in no area, so areas leaves nothing out` };
       for (const prefix of matched) for (const tag of AREAS[prefix] ?? []) reached.add(tag);
@@ -49,7 +55,7 @@ export const areas = {
     const exclude: Record<string, string> = {};
     for (const test of tests) {
       const tags = test.tags.filter((tag) => AREA_TAGS.has(tag));
-      if (tags.length > 0 && !tags.some((tag) => reached.has(tag))) exclude[test.id] = `the change reaches none of ${tags.join(', ')}`;
+      if (tags.length > 0 && !keep(test) && !tags.some((tag) => reached.has(tag))) exclude[test.id] = `the change reaches none of ${tags.join(', ')}`;
     }
     const note = reached.size > 0 ? `the change reaches ${[...reached].sort().join(', ')}` : 'the change reaches no area';
     return { exclude, note };
