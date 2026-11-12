@@ -8,7 +8,8 @@ import { editedTests } from './tests/edited-tests-filter';
 export default {
   tests: ['tests/*.e2e.ts'],
   // With --changed-since, areas leaves out the tests whose routes the change can't reach,
-  // then Jev judges the rest. A changed test file runs only its edited tests without asking.
+  // then Jev judges the rest. In a changed test file, the edited tests run without asking
+  // and Jev judges the file's other tests.
   // Without the flag, every test runs.
   filters: [areas, editedTests(decisionFilter({ model: gateway.decisionModel('typesafe-ai/jev') }))],
   // The Vercel AI Gateway serves the model id and reads AI_GATEWAY_API_KEY, or the OIDC token of a linked Vercel project.
