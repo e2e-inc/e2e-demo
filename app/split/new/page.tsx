@@ -108,7 +108,7 @@ export default function NewSplit() {
               ? selected[0].displayName
               : `${selected.length} people`,
           color: colors.purple,
-          title: `Split ${formatCents(totalCents)} between ${selected.length + (includeSelf ? 1 : 0)} people`,
+          title: `Split ${formatCents(totalCents)} between ${count} ${count === 1 ? 'person' : 'people'}`,
           body: `${selected.map((person) => person.displayName.split(' ')[0]).join(', ')} will each get a request.`,
         }),
       );
