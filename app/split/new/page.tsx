@@ -129,7 +129,7 @@ export default function NewSplit() {
             step === 'amount'
               ? 'Split a bill'
               : step === 'people'
-                ? 'Who was there?'
+                ? 'Who are you splitting with?'
                 : 'Review split'
           }
           onBack={() =>
