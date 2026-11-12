@@ -145,17 +145,40 @@ async function editedTestIds(path: string, tests: readonly TestFilterCandidate[]
 }
 
 /**
+ * A line with its `//` comment removed, ignoring `//` inside string and
+ * template literals, and trimmed.
+ */
+function stripComment(line: string): string {
+  let quote: string | undefined;
+  for (let i = 0; i < line.length; i += 1) {
+    const char = line[i];
+    if (quote !== undefined) {
+      if (char === '\\') i += 1;
+      else if (char === quote) quote = undefined;
+    } else if (char === '"' || char === "'" || char === '`') {
+      quote = char;
+    } else if (char === '/' && line[i + 1] === '/') {
+      return line.slice(0, i).trim();
+    }
+  }
+  return line.trim();
+}
+
+/**
  * The line spans of the new file each hunk of a `-U0` diff changes, skipping
- * hunks that only change blank lines and `//` comments. A hunk that only
- * deletes lines spans the lines on both sides of the gap. `undefined` when
- * the diff has no hunks, as for an untracked or binary file.
+ * hunks that only change blank lines and `//` comments, including trailing
+ * ones. A hunk that only deletes lines spans the lines on both sides of the
+ * gap. `undefined` when the diff has no hunks, as for an untracked or binary
+ * file.
  */
 function changedSpans(diff: string): Array<[number, number]> | undefined {
   const spans: Array<[number, number]> = [];
   let hunks = 0;
-  let current: { span: [number, number]; meaningful: boolean } | undefined;
+  let current: { span: [number, number]; removed: string[]; added: string[] } | undefined;
   const close = () => {
-    if (current?.meaningful) spans.push(current.span);
+    if (current !== undefined && current.removed.join('\n') !== current.added.join('\n')) {
+      spans.push(current.span);
+    }
     current = undefined;
   };
   for (const line of diff.split('\n')) {
@@ -165,12 +188,16 @@ function changedSpans(diff: string): Array<[number, number]> | undefined {
       hunks += 1;
       const start = Number(header[1]);
       const count = header[2] === undefined ? 1 : Number(header[2]);
-      current = { span: count === 0 ? [start, start + 1] : [start, start + count - 1], meaningful: false };
+      current = {
+        span: count === 0 ? [start, start + 1] : [start, start + count - 1],
+        removed: [],
+        added: [],
+      };
       continue;
     }
     if (current === undefined || !(line.startsWith('+') || line.startsWith('-'))) continue;
-    const content = line.slice(1).trim();
-    if (content !== '' && !content.startsWith('//')) current.meaningful = true;
+    const code = stripComment(line.slice(1));
+    if (code !== '') (line.startsWith('+') ? current.added : current.removed).push(code);
   }
   close();
   return hunks === 0 ? undefined : spans;
