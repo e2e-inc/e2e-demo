@@ -108,7 +108,7 @@ export default function NewSplit() {
               ? selected[0].displayName
               : `${selected.length} people`,
           color: colors.purple,
-          title: `Split ${formatCents(totalCents)} ${selected.length + (includeSelf ? 1 : 0)} ways`,
+          title: `Split ${formatCents(totalCents)} between ${count} ${count === 1 ? 'person' : 'people'}`,
           body: `${selected.map((person) => person.displayName.split(' ')[0]).join(', ')} will each get a request.`,
         }),
       );
@@ -129,7 +129,7 @@ export default function NewSplit() {
             step === 'amount'
               ? 'Split a bill'
               : step === 'people'
-                ? 'Who was there?'
+                ? 'Who are you splitting with?'
                 : 'Review split'
           }
           onBack={() =>
